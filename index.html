@@ -132,6 +132,52 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-14T05:42:44.939Z">2018-11-14</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 214 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/11/14/WP的buffer-pool报错导致数据库Error的解决方法/"></a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+<p>title: WP的buffer pool报错导致数据库Error的解决方法<br>date: 2018-11-14 13:42:44<br>tags:</p>
+<ul>
+<li>wordpress</li>
+</ul>
+<p>首先查看错误日志<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cd /var/log</span><br><span class="line">Tail -n 500 mysqld.log</span><br></pre></td></tr></table></figure></p>
+<p>发现错误是：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2018-11-11T09:08:20.364026Z 0 [Note] InnoDB: Initializing buffer pool, total size = 50M, instances = 1, chunk size = 50M</span><br><span class="line">2018-11-11T09:08:21.751200Z 0 [ERROR] InnoDB: mmap(53690368 bytes) failed; errno 12</span><br><span class="line">2018-11-11T09:08:21.751262Z 0 [ERROR] InnoDB: Cannot allocate memory for the buffer pool</span><br><span class="line">2018-11-11T09:08:21.751274Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error</span><br><span class="line">2018-11-11T09:08:22.220815Z 0 [ERROR] Plugin &apos;InnoDB&apos; init function returned error.</span><br><span class="line">2018-11-11T09:08:22.526092Z 0 [ERROR] Plugin &apos;InnoDB&apos; registration as a STORAGE ENGINE failed.</span><br><span class="line">2018-11-11T09:08:22.526142Z 0 [ERROR] Failed to initialize builtin plugins.</span><br><span class="line">2018-11-11T09:08:22.526159Z 0 [ERROR] Aborting</span><br></pre></td></tr></table></figure></p>
+<p>导致的 Wp Error establishing a database connection problem<br>解决方法：改mysql的设置<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Where is my.cnf</span><br><span class="line">Cd /etc</span><br><span class="line">Vim my.cnf</span><br><span class="line">innodb_buffer_pool_size = 50M</span><br></pre></td></tr></table></figure></p>
+<p>依然不行改swap空间<br>空间太小，设置swap分区</p>
+<p>参考网址：<br><a href="https://blog.csdn.net/Mr_OOO/article/details/78653523" target="_blank" rel="noopener">https://blog.csdn.net/Mr_OOO/article/details/78653523</a><br><a href="http://junhey.com/2016/06/16/2016-06-17-05-10.html" target="_blank" rel="noopener">http://junhey.com/2016/06/16/2016-06-17-05-10.html</a><br><a href="https://www.cnblogs.com/LUO77/p/5821530.html" target="_blank" rel="noopener">https://www.cnblogs.com/LUO77/p/5821530.html</a> 参考文件,这儿后面的就是在my.cnf可以直接修改23</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2018-11-13T10:43:44.000Z">2018-11-13</time>
                 
                 
@@ -202,7 +248,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        1
+                        2
                     </p>
                 </div>
             </div>
@@ -320,6 +366,15 @@
 </div>
     
         
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        
+    </div>
+</div>
+
     
     
         <div class="card card-transparent is-hidden-widescreen">
@@ -330,6 +385,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/11/14/WP的buffer-pool报错导致数据库Error的解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-14T05:42:44.939Z">2018-11-14</time></div>
+                    <a href="/2018/11/14/WP的buffer-pool报错导致数据库Error的解决方法/" class="has-link-black-ter is-size-6"></a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -368,7 +442,7 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -410,6 +484,25 @@
         
         <article class="media">
             
+            <a href="/2018/11/14/WP的buffer-pool报错导致数据库Error的解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-14T05:42:44.939Z">2018-11-14</time></div>
+                    <a href="/2018/11/14/WP的buffer-pool报错导致数据库Error的解决方法/" class="has-link-black-ter is-size-6"></a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2018/11/13/this-is-my-first-post/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="this is my first post">
@@ -445,7 +538,7 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
