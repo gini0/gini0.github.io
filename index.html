@@ -138,7 +138,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 193 个字)
+                    1 分钟 读完 (大约 194 个字)
                 </span>
                 
             </div>
@@ -155,13 +155,16 @@
 <p>发现错误是：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2018-11-11T09:08:20.364026Z 0 [Note] InnoDB: Initializing buffer pool, total size = 50M, instances = 1, chunk size = 50M</span><br><span class="line">2018-11-11T09:08:21.751200Z 0 [ERROR] InnoDB: mmap(53690368 bytes) failed; errno 12</span><br><span class="line">2018-11-11T09:08:21.751262Z 0 [ERROR] InnoDB: Cannot allocate memory for the buffer pool</span><br><span class="line">2018-11-11T09:08:21.751274Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error</span><br><span class="line">2018-11-11T09:08:22.220815Z 0 [ERROR] Plugin &apos;InnoDB&apos; init function returned error.</span><br><span class="line">2018-11-11T09:08:22.526092Z 0 [ERROR] Plugin &apos;InnoDB&apos; registration as a STORAGE ENGINE failed.</span><br><span class="line">2018-11-11T09:08:22.526142Z 0 [ERROR] Failed to initialize builtin plugins.</span><br><span class="line">2018-11-11T09:08:22.526159Z 0 [ERROR] Aborting</span><br></pre></td></tr></table></figure>
 <p>导致的 Wp Error establishing a database connection problem<br>解决方法：改mysql的设置</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Where is my.cnf</span><br><span class="line">Cd /etc</span><br><span class="line">Vim my.cnf</span><br><span class="line">innodb_buffer_pool_size = 50M</span><br></pre></td></tr></table></figure>
-<p>依然不行改swap空间<br>空间太小，设置swap分区</p>
-<p>参考网址：<br><a href="https://blog.csdn.net/Mr_OOO/article/details/78653523" target="_blank" rel="noopener">https://blog.csdn.net/Mr_OOO/article/details/78653523</a><br><a href="http://junhey.com/2016/06/16/2016-06-17-05-10.html" target="_blank" rel="noopener">http://junhey.com/2016/06/16/2016-06-17-05-10.html</a><br><a href="https://www.cnblogs.com/LUO77/p/5821530.html" target="_blank" rel="noopener">https://www.cnblogs.com/LUO77/p/5821530.html</a> </p>
-<p>参考文件,这儿后面的就是在my.cnf可以直接修改23</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2018/11/14/Wp中数据库Error的解决方法/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
