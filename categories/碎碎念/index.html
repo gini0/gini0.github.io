@@ -2,23 +2,21 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>WP的buffer pool报错导致数据库Error的解决方法 - Mr.Sun的东鳞西爪</title>
+<title>分类: 碎碎念 - Mr.Sun的东鳞西爪</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="首先查看错误日志 12Cd /var/logTail -n 500 mysqld.log 发现错误是： 123456782018-11-11T09:08:20.364026Z 0 [Note] InnoDB: Initializing buffer pool, total size = 50M, instances = 1, chunk size = 50M2018-11-11T09:08:21.">
-<meta name="keywords" content="wordpress">
-<meta property="og:type" content="article">
-<meta property="og:title" content="WP的buffer pool报错导致数据库Error的解决方法">
-<meta property="og:url" content="/2018/11/14/Wp中数据库Error的解决方法/index.html">
+    <meta name="description" content="Think more for the better world">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mr.Sun的东鳞西爪">
+<meta property="og:url" content="/categories/碎碎念/index.html">
 <meta property="og:site_name" content="Mr.Sun的东鳞西爪">
-<meta property="og:description" content="首先查看错误日志 12Cd /var/logTail -n 500 mysqld.log 发现错误是： 123456782018-11-11T09:08:20.364026Z 0 [Note] InnoDB: Initializing buffer pool, total size = 50M, instances = 1, chunk size = 50M2018-11-11T09:08:21.">
+<meta property="og:description" content="Think more for the better world">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-14T12:28:05.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WP的buffer pool报错导致数据库Error的解决方法">
-<meta name="twitter:description" content="首先查看错误日志 12Cd /var/logTail -n 500 mysqld.log 发现错误是： 123456782018-11-11T09:08:20.364026Z 0 [Note] InnoDB: Initializing buffer pool, total size = 50M, instances = 1, chunk size = 50M2018-11-11T09:08:21.">
+<meta name="twitter:title" content="Mr.Sun的东鳞西爪">
+<meta name="twitter:description" content="Think more for the better world">
 
 
 
@@ -84,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.jpeg" alt="WP的buffer pool报错导致数据库Error的解决方法" height="28">
+                <img src="/images/logo.jpeg" alt="Mr.Sun的东鳞西爪" height="28">
             
             </a>
         </div>
@@ -128,22 +126,34 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">分类</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">碎碎念</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-14T12:18:47.000Z">2018-11-14</time>
+                <time class="level-item has-text-grey" datetime="2018-11-21T11:10:35.000Z">2018-11-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                <a class="has-link-grey -link" href="/categories/碎碎念/">碎碎念</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 194 个字)
+                    5 分钟 读完 (大约 778 个字)
                 </span>
                 
             </div>
@@ -151,30 +161,20 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                WP的buffer pool报错导致数据库Error的解决方法
+                <a class="has-link-black-ter" href="/2018/11/21/“给我做一个类似XX的App”/">“给我做一个类似XX的App”</a>
             
         </h1>
         <div class="content">
-            <p>首先查看错误日志</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cd /var/log</span><br><span class="line">Tail -n 500 mysqld.log</span><br></pre></td></tr></table></figure>
-<p>发现错误是：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2018-11-11T09:08:20.364026Z 0 [Note] InnoDB: Initializing buffer pool, total size = 50M, instances = 1, chunk size = 50M</span><br><span class="line">2018-11-11T09:08:21.751200Z 0 [ERROR] InnoDB: mmap(53690368 bytes) failed; errno 12</span><br><span class="line">2018-11-11T09:08:21.751262Z 0 [ERROR] InnoDB: Cannot allocate memory for the buffer pool</span><br><span class="line">2018-11-11T09:08:21.751274Z 0 [ERROR] InnoDB: Plugin initialization aborted with error Generic error</span><br><span class="line">2018-11-11T09:08:22.220815Z 0 [ERROR] Plugin &apos;InnoDB&apos; init function returned error.</span><br><span class="line">2018-11-11T09:08:22.526092Z 0 [ERROR] Plugin &apos;InnoDB&apos; registration as a STORAGE ENGINE failed.</span><br><span class="line">2018-11-11T09:08:22.526142Z 0 [ERROR] Failed to initialize builtin plugins.</span><br><span class="line">2018-11-11T09:08:22.526159Z 0 [ERROR] Aborting</span><br></pre></td></tr></table></figure>
-<p>导致的 Wp Error establishing a database connection problem<br>解决方法：改mysql的设置</p>
-<a id="more"></a>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Where is my.cnf</span><br><span class="line">Cd /etc</span><br><span class="line">Vim my.cnf</span><br><span class="line">innodb_buffer_pool_size = 50M</span><br></pre></td></tr></table></figure>
-<p>依然不行改swap空间<br>空间太小，设置swap分区</p>
-<p>参考网址：<br><a href="https://blog.csdn.net/Mr_OOO/article/details/78653523" target="_blank" rel="noopener">https://blog.csdn.net/Mr_OOO/article/details/78653523</a><br><a href="http://junhey.com/2016/06/16/2016-06-17-05-10.html" target="_blank" rel="noopener">http://junhey.com/2016/06/16/2016-06-17-05-10.html</a><br><a href="https://www.cnblogs.com/LUO77/p/5821530.html" target="_blank" rel="noopener">https://www.cnblogs.com/LUO77/p/5821530.html</a> </p>
-<p>参考文件,这儿后面的就是在my.cnf可以直接修改23</p>
+            <p>​        刚刚看论坛，有人说有客户说到要做一个类似XX的App，当然遭遇的群嘲。无非就是没有具体需求，没有预算种种。Ref：<a href="https://www.v2ex.com/t/509918#reply40" target="_blank" rel="noopener">https://www.v2ex.com/t/509918#reply40</a></p>
+<p>​        我确实经常遇到这样的客户，我一般会听一听，然后觉得有可行性就做，或者我觉得项目挺好的也做，但是大部分我都不想做或者拒绝了，其实对于小的技术团队和个人来说是浪费精力和竞争力。简单来说就是10年经验，3年技术的现象，你会做的调用的就是那些东西，没啥意思。另一个方面，你一听，坦白说你就大概率知道明年就不能续费了，虽然可能会少很多钱，但是这一锤子买卖确实没的意思。</p>
+<p>​        基本上创业的人都有一种或多或少改变世界的心，再退一点，就是我的产品不能改变世界，客户的产品牛逼了我也挺开心的。我听说现在做个公司官网就1200块钱还包服务器，有什么做头。</p>
+<p>​        碎碎念一下，这个野蛮竞争确实没有意思，明年上Ai的生产环境又不知道什么可以落地，CV、NLP还是什么，但这最起码会让觉得有点做头和盼头吧，不然真是苟且生活了。</p>
+<p>​        在我看来开源，改进轮子都是进步，这个壁垒其实比造轮子高；“做一个类似XX的App”，如果真的完全没有想法、资源，就是给钱无他，就是把客户割韭菜了。</p>
+<p>​        最后就应该是一种合作共赢的关系，你找我，你的产品可以创造更多，获得更多，其实也就是其实找到好的技术公司应该是客户的幸运，当然我不是说我；我也可以积累行业经验、技术经验，一般这种，我都愿意很少收费或者某种入股来做，不然你直接淘宝做就是了，你那些东西，功能和需求，坦白说，我也做不出花来。</p>
+<p>​        我自己公司官网写了几句话，“几包泡面，几行代码，一个想法“。就是这样，TF几十行代码就可以做出一个LSNTRNN还带BN云云其实都可以上生产了，你搞个几千行代码吓唬谁和装什么逼呢？今天看抖音有个人新建个文件夹还要终端mkdir，我看你装逼装的真是在家放个屁都要说一声Excuse me。</p>
+<p>​        忠于生活，忠于理想，改变一点。碎碎念完了，继续看ML，继续想可以怎么实现落地怎么改变。</p>
+<p>​       </p>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/wordpress/">wordpress</a>
-                </div>
-            </div>
         </div>
         
         
@@ -183,19 +183,7 @@
 </div>
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/19/怎么优化LAMP的速度/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">怎么优化LAMP的速度</span>
-            </a>
-        </div>
-        
-        
-    </div>
-</div>
+
 
 
 </div>
@@ -683,7 +671,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.jpeg" alt="WP的buffer pool报错导致数据库Error的解决方法" height="28">
+                    <img src="/images/logo.jpeg" alt="Mr.Sun的东鳞西爪" height="28">
                 
                 </a>
                 <p class="is-size-7">
