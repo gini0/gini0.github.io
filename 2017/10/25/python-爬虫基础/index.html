@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>python 爬虫基础 - Mr.Sun的东鳞西爪</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料 [TOC]">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 爬虫基础">
+<meta property="og:url" content="/2017/10/25/python-爬虫基础/index.html">
+<meta property="og:site_name" content="Mr.Sun的东鳞西爪">
+<meta property="og:description" content="做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料 [TOC]">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-25T14:24:47.572Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 爬虫基础">
+<meta name="twitter:description" content="做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料 [TOC]">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    <style>body>.navbar,body>.section,body>.footer{opacity: 0}</style>
+    
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.jpeg" alt="python 爬虫基础" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Email to me" href="mailto:swceo@njhuifou.com">
+                        
+                        <i class="fa fa-envelope"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-10-25T14:03:05.000Z">2017-10-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 分钟 读完 (大约 2745 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                python 爬虫基础
+            
+        </h1>
+        <div class="content">
+            <p>做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料</p>
+<p>[TOC]<br><a id="more"></a></p>
+<h1 id="网页爬虫"><a href="#网页爬虫" class="headerlink" title="网页爬虫"></a>网页爬虫</h1><h2 id="了解网页结构"><a href="#了解网页结构" class="headerlink" title="了解网页结构"></a>了解网页结构</h2><p>用python登录网页：<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen</span><br><span class="line"><span class="hljs-comment"># if has Chinese, apply decode()</span></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="hljs-string">"https://morvanzhou.github.io/static/scraping/basic-structure.html"</span></span><br><span class="line">).read().decode(<span class="hljs-string">'utf-8'</span>)</span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure></p>
+<p>然后用正则表达式：<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = re.findall(<span class="hljs-string">r"&lt;p&gt;(.*?)&lt;/p&gt;"</span>, html, flags=re.DOTALL)    <span class="hljs-comment"># re.DOTALL if multi line</span></span><br><span class="line">print(<span class="hljs-string">"\nPage paragraph is: "</span>, res[<span class="hljs-number">0</span>])</span><br></pre></td></tr></table></figure></p>
+<h2 id="BeautifulSoup-解析网页"><a href="#BeautifulSoup-解析网页" class="headerlink" title="BeautifulSoup 解析网页"></a>BeautifulSoup 解析网页</h2><h3 id="BS基础"><a href="#BS基础" class="headerlink" title="BS基础"></a>BS基础</h3><p>选着要爬的网址 (url)<br>使用 python 登录上这个网址 (urlopen等)<br>读取网页信息 (read() 出来)<br>将读取的信息放入 BeautifulSoup<br>使用 BeautifulSoup 选取 tag 信息等 (代替正则表达式)<br>安装<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Python 3+</span><br><span class="line">pip3 install beautifulsoup4</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># if has Chinese, apply decode()</span></span><br><span class="line">html = urlopen(<span class="hljs-string">"https://morvanzhou.github.io/static/scraping/basic-structure.html"</span>).read().decode(<span class="hljs-string">'utf-8'</span>)</span><br><span class="line">print(html)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#这边的解析方式有很多 https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/ 推荐使用lxml</span></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="hljs-string">'lxml'</span>)</span><br><span class="line">print(soup.h1) <span class="hljs-comment">#直接h1</span></span><br><span class="line">print(<span class="hljs-string">'\n'</span>, soup.p)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">all_href = soup.find_all(<span class="hljs-string">'a'</span>) <span class="hljs-comment">#</span></span><br><span class="line">all_href = [l[<span class="hljs-string">'href'</span>] <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> all_href]</span><br><span class="line">print(<span class="hljs-string">'\n'</span>, all_href)</span><br></pre></td></tr></table></figure>
+<h3 id="BS-解析CSS"><a href="#BS-解析CSS" class="headerlink" title="BS 解析CSS"></a>BS 解析CSS</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#还是导入两个模块</span></span><br><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># if has Chinese, apply decode()</span></span><br><span class="line">html = urlopen(<span class="hljs-string">"https://morvanzhou.github.io/static/scraping/list.html"</span>).read().decode(<span class="hljs-string">'utf-8'</span>)</span><br><span class="line">print(html)</span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="hljs-string">'lxml'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># use class to narrow search</span></span><br><span class="line">month = soup.find_all(<span class="hljs-string">'li'</span>, &#123;<span class="hljs-string">"class"</span>: <span class="hljs-string">"month"</span>&#125;)</span><br><span class="line"><span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> month:</span><br><span class="line">    print(m.get_text()) <span class="hljs-comment">#这边用get_text()来获得里面的具体信息</span></span><br><span class="line"></span><br><span class="line">jan = soup.find(<span class="hljs-string">'ul'</span>, &#123;<span class="hljs-string">"class"</span>: <span class="hljs-string">'jan'</span>&#125;)</span><br><span class="line">d_jan = jan.find_all(<span class="hljs-string">'li'</span>)              <span class="hljs-comment"># use jan as a parent</span></span><br><span class="line"><span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> d_jan:</span><br><span class="line">    print(d.get_text())</span><br></pre></td></tr></table></figure>
+<h3 id="BS与正则表达式的运用"><a href="#BS与正则表达式的运用" class="headerlink" title="BS与正则表达式的运用"></a>BS与正则表达式的运用</h3><ol>
+<li>导入正则模块</li>
+<li>re.compile()</li>
+<li>迭代输出,输出的是列表<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen</span><br><span class="line"><span class="hljs-keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># if has Chinese, apply decode()</span></span><br><span class="line">html = urlopen(<span class="hljs-string">"https://morvanzhou.github.io/static/scraping/table.html"</span>).read().decode(<span class="hljs-string">'utf-8'</span>)</span><br><span class="line">print(html)</span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(html, features=<span class="hljs-string">'lxml'</span>)</span><br><span class="line"></span><br><span class="line">img_links = soup.find_all(<span class="hljs-string">"img"</span>, &#123;<span class="hljs-string">"src"</span>: re.compile(<span class="hljs-string">'.*?\.jpg'</span>)&#125;)</span><br><span class="line"><span class="hljs-keyword">for</span> link <span class="hljs-keyword">in</span> img_links:</span><br><span class="line">    print(link[<span class="hljs-string">'src'</span>])</span><br><span class="line">    </span><br><span class="line">course_links = soup.find_all(<span class="hljs-string">'a'</span>, &#123;<span class="hljs-string">'href'</span>: re.compile(<span class="hljs-string">'https://morvan.*'</span>)&#125;)</span><br><span class="line"><span class="hljs-keyword">for</span> link <span class="hljs-keyword">in</span> course_links:</span><br><span class="line">    print(link[<span class="hljs-string">'href'</span>])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="爬百度百科-重要"><a href="#爬百度百科-重要" class="headerlink" title="爬百度百科 重要"></a>爬百度百科 重要</h3><p><strong><a href="https://morvanzhou.github.io/tutorials/data-manipulation/scraping/2-04-practice-baidu-baike/" target="_blank" rel="noopener">https://morvanzhou.github.io/tutorials/data-manipulation/scraping/2-04-practice-baidu-baike/</a></strong><br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-comment">#Practice: scrape Baidu Baike</span></span><br><span class="line"><span class="hljs-comment">#Here we build a scraper to crawl Baidu Baike from this page onwards. We store a historical webpage that we have already visited to keep tracking it.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#In [2]:</span></span><br><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen</span><br><span class="line"><span class="hljs-keyword">import</span> re</span><br><span class="line"><span class="hljs-keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">base_url = <span class="hljs-string">"https://baike.baidu.com"</span></span><br><span class="line">his = [<span class="hljs-string">"/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711"</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#Select the last sub url in "his", print the title and url.</span></span><br><span class="line"></span><br><span class="line">url = base_url + his[<span class="hljs-number">-1</span>]</span><br><span class="line"></span><br><span class="line">html = urlopen(url).read().decode(<span class="hljs-string">'utf-8'</span>)</span><br><span class="line">soup = BeautifulSoup(html, features=<span class="hljs-string">'lxml'</span>)</span><br><span class="line">print(soup.find(<span class="hljs-string">'h1'</span>).get_text(), <span class="hljs-string">'    url: '</span>, his[<span class="hljs-number">-1</span>])</span><br><span class="line"><span class="hljs-comment">#网络爬虫     url:  /item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711</span></span><br><span class="line"><span class="hljs-comment">#Find all sub_urls for baidu baike (item page), randomly select a sub_urls and store it in "his". If no valid sub link is found, than pop last url in "his".</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># find valid urls</span></span><br><span class="line">sub_urls = soup.find_all(<span class="hljs-string">"a"</span>, &#123;<span class="hljs-string">"target"</span>: <span class="hljs-string">"_blank"</span>, <span class="hljs-string">"href"</span>: re.compile(<span class="hljs-string">"/item/(%.&#123;2&#125;)+$"</span>)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> len(sub_urls) != <span class="hljs-number">0</span>:</span><br><span class="line">    his.append(random.sample(sub_urls, <span class="hljs-number">1</span>)[<span class="hljs-number">0</span>][<span class="hljs-string">'href'</span>])</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    <span class="hljs-comment"># no valid sub link found</span></span><br><span class="line">    his.pop()</span><br><span class="line">print(his)</span><br><span class="line"><span class="hljs-comment">#['/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711', '/item/%E4%B8%8B%E8%BD%BD%E8%80%85']</span></span><br><span class="line"><span class="hljs-comment">#Put everthing together. Random running for 20 iterations. See what we end up with.</span></span><br><span class="line"><span class="hljs-comment">#his = ["/item/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/5162711"]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">20</span>):</span><br><span class="line">    url = base_url + his[<span class="hljs-number">-1</span>]</span><br><span class="line"></span><br><span class="line">    html = urlopen(url).read().decode(<span class="hljs-string">'utf-8'</span>)</span><br><span class="line">    soup = BeautifulSoup(html, features=<span class="hljs-string">'lxml'</span>)</span><br><span class="line">    print(i, soup.find(<span class="hljs-string">'h1'</span>).get_text(), <span class="hljs-string">'    url: '</span>, his[<span class="hljs-number">-1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># find valid urls</span></span><br><span class="line">    sub_urls = soup.find_all(<span class="hljs-string">"a"</span>, &#123;<span class="hljs-string">"target"</span>: <span class="hljs-string">"_blank"</span>, <span class="hljs-string">"href"</span>: re.compile(<span class="hljs-string">"/item/(%.&#123;2&#125;)+$"</span>)&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">if</span> len(sub_urls) != <span class="hljs-number">0</span>:</span><br><span class="line">        his.append(random.sample(sub_urls, <span class="hljs-number">1</span>)[<span class="hljs-number">0</span>][<span class="hljs-string">'href'</span>])</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        <span class="hljs-comment"># no valid sub link found</span></span><br><span class="line">        his.pop()</span><br></pre></td></tr></table></figure></p>
+<h2 id="更多请求-下载方式"><a href="#更多请求-下载方式" class="headerlink" title="更多请求/下载方式"></a>更多请求/下载方式</h2><h3 id="Request的方式"><a href="#Request的方式" class="headerlink" title="Request的方式"></a>Request的方式</h3><p>Requests：get/post<br>我们就来说两个重要的, get, post, 95% 的时间, 你都是在使用这两个来请求一个网页.<br>post：<br> 账号登录<br> 搜索内容<br> 上传图片<br> 上传文件<br> 往服务器传数据 等<br>get：<br> 正常打开网页<br> 不往服务器传数据</p>
+<p>网页使用 get 就可以了, 都是只是 get 发送请求. 而 post, 我们则是给服务器发送个性化请求, 比如将你的账号密码传给服务器, 让它给你返回一个含有你个人信息的 HTML.</p>
+<p>从主动和被动的角度来说, post 中文是发送, 比较主动, 你控制了服务器返回的内容. 而 get 中文是取得, 是被动的, 你没有发送给服务器个性化的信息, 它不会根据你个性化的信息返回不一样的 HTML</p>
+<p>安装Requests<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># python 3+</span></span><br><span class="line">pip3 install requests</span><br></pre></td></tr></table></figure></p>
+<p>get有一个参数 params，就是Request.post<br>用Session来传递cookie,就是Session.get<br>注意post的地址，get地址里面没有现实的参数</p>
+<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-comment">#requests: an alternative to urllib</span></span><br><span class="line"><span class="hljs-comment">#requests has more functions to replace urlopen. Use request.get() to replace urlopen() and pass some parameters to the webpage. The webbrowser is to open the new url and give you an visualization of this result.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line"><span class="hljs-keyword">import</span> webbrowser <span class="hljs-comment">#内置模块，打开浏览器</span></span><br><span class="line">param = &#123;<span class="hljs-string">"wd"</span>: <span class="hljs-string">"莫烦Python"</span>&#125;</span><br><span class="line">r = requests.get(<span class="hljs-string">'http://www.baidu.com/s'</span>, params=param)</span><br><span class="line">print(r.url)</span><br><span class="line">webbrowser.open(r.url)</span><br><span class="line">http://www.baidu.com/s?wd=%E8%8E%AB%E7%83%A6Python</span><br><span class="line"><span class="hljs-comment">#Out[2]:</span></span><br><span class="line"><span class="hljs-comment">#True</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">##post</span></span><br><span class="line"><span class="hljs-comment">##We test the post function in this page. To pass some data to the server to analyse and send some response to you accordingly.</span></span><br><span class="line">data = &#123;<span class="hljs-string">'firstname'</span>: <span class="hljs-string">'莫烦'</span>, <span class="hljs-string">'lastname'</span>: <span class="hljs-string">'周'</span>&#125;</span><br><span class="line">r = requests.post(<span class="hljs-string">'http://pythonscraping.com/files/processing.php'</span>, data=data)</span><br><span class="line">print(r.text)</span><br><span class="line"><span class="hljs-comment">#Hello there, 莫烦 周!</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">##upload image</span></span><br><span class="line"><span class="hljs-comment">##We still use post function to update image in this page.</span></span><br><span class="line">file = &#123;<span class="hljs-string">'uploadFile'</span>: open(<span class="hljs-string">'./image.png'</span>, <span class="hljs-string">'rb'</span>)&#125;</span><br><span class="line">r = requests.post(<span class="hljs-string">'http://pythonscraping.com/files/processing2.php'</span>, files=file)</span><br><span class="line">print(r.text)</span><br><span class="line"><span class="hljs-comment">#The file image.png has been uploaded.</span></span><br><span class="line"><span class="hljs-comment">#login</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">##Use post method to login to a website.</span></span><br><span class="line">payload = &#123;<span class="hljs-string">'username'</span>: <span class="hljs-string">'Morvan'</span>, <span class="hljs-string">'password'</span>: <span class="hljs-string">'password'</span>&#125;</span><br><span class="line">r = requests.post(<span class="hljs-string">'http://pythonscraping.com/pages/cookies/welcome.php'</span>, data=payload)</span><br><span class="line">print(r.cookies.get_dict())</span><br><span class="line">r = requests.get(<span class="hljs-string">'http://pythonscraping.com/pages/cookies/profile.php'</span>, cookies=r.cookies)</span><br><span class="line">print(r.text)</span><br><span class="line"><span class="hljs-comment">#&#123;'username': 'Morvan', 'loggedin': '1'&#125;</span></span><br><span class="line"><span class="hljs-comment">#Hey Morvan! Looks like you're still logged into the site!</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">##another general way to login</span></span><br><span class="line"><span class="hljs-comment">##Use session instead requests. Keep you in a session and keep track the cookies.</span></span><br><span class="line">session = requests.Session()</span><br><span class="line">payload = &#123;<span class="hljs-string">'username'</span>: <span class="hljs-string">'Morvan'</span>, <span class="hljs-string">'password'</span>: <span class="hljs-string">'password'</span>&#125;</span><br><span class="line">r = session.post(<span class="hljs-string">'http://pythonscraping.com/pages/cookies/welcome.php'</span>, data=payload)</span><br><span class="line">print(r.cookies.get_dict())</span><br><span class="line">r = session.get(<span class="hljs-string">"http://pythonscraping.com/pages/cookies/profile.php"</span>)</span><br><span class="line">print(r.text)</span><br><span class="line"><span class="hljs-comment">#&#123;'username': 'Morvan', 'loggedin': '1'&#125;</span></span><br><span class="line"><span class="hljs-comment">#Hey Morvan! Looks like you're still logged into the site!</span></span><br></pre></td></tr></table></figure>
+<h3 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h3><p>3种方式<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#了下载到一个特定的文件夹, 我们先建立一个文件夹吧. 并且规定这个图片下载地址</span></span><br><span class="line"><span class="hljs-keyword">import</span> os</span><br><span class="line">os.makedirs(<span class="hljs-string">'./img/'</span>, exist_ok=<span class="hljs-keyword">True</span>)</span><br><span class="line">IMAGE_URL = <span class="hljs-string">"https://morvanzhou.github.io/static/img/description/learning_step_flowchart.png"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#方法1 使用 urlretrieve </span></span><br><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlretrieve</span><br><span class="line">urlretrieve(IMAGE_URL, <span class="hljs-string">'./img/image1.png'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#方法2 使用 request </span></span><br><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line">r = requests.get(IMAGE_URL)</span><br><span class="line"><span class="hljs-keyword">with</span> open(<span class="hljs-string">'./img/image2.png'</span>, <span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:</span><br><span class="line">    f.write(r.content)</span><br><span class="line">    </span><br><span class="line"><span class="hljs-comment">#方法3 使用流的方式，不然只能先存在内存里</span></span><br><span class="line">r = requests.get(IMAGE_URL, stream=<span class="hljs-keyword">True</span>)    <span class="hljs-comment"># stream loading</span></span><br><span class="line"><span class="hljs-keyword">with</span> open(<span class="hljs-string">'./img/image3.png'</span>, <span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:</span><br><span class="line">    <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> r.iter_content(chunk_size=<span class="hljs-number">32</span>):</span><br><span class="line">        f.write(chunk)</span><br></pre></td></tr></table></figure></p>
+<h3 id="循环下载图片"><a href="#循环下载图片" class="headerlink" title="循环下载图片"></a>循环下载图片</h3><p>requests 访问和 下载功能, 还有 BeautifulSoup、<br>找到img_list下面。。。的img的src</p>
+<ol>
+<li>找到图片位置，分析<figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="hljs-keyword">import</span> requests</span><br><span class="line">URL = <span class="hljs-string">"http://www.nationalgeographic.com.cn/animals/"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># find list of image holder</span></span><br><span class="line">html = requests.get(URL).text</span><br><span class="line">soup = BeautifulSoup(html, <span class="hljs-string">'lxml'</span>)</span><br><span class="line">img_ul = soup.find_all(<span class="hljs-string">'ul'</span>, &#123;<span class="hljs-string">"class"</span>: <span class="hljs-string">"img_list"</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#Create a folder for these pictures</span></span><br><span class="line"><span class="hljs-keyword">import</span> os</span><br><span class="line">os.makedirs(<span class="hljs-string">'./img/'</span>, exist_ok=<span class="hljs-keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#download</span></span><br><span class="line"><span class="hljs-comment">#Find all picture urls and download them.In [4]:</span></span><br><span class="line"><span class="hljs-keyword">for</span> ul <span class="hljs-keyword">in</span> img_ul:</span><br><span class="line">    imgs = ul.find_all(<span class="hljs-string">'img'</span>)<span class="hljs-comment"># find_all()函数</span></span><br><span class="line">    <span class="hljs-keyword">for</span> img <span class="hljs-keyword">in</span> imgs:</span><br><span class="line">        url = img[<span class="hljs-string">'src'</span>]</span><br><span class="line">        r = requests.get(url, stream=<span class="hljs-keyword">True</span>) <span class="hljs-comment">#用流的方式</span></span><br><span class="line">        image_name = url.split(<span class="hljs-string">'/'</span>)[<span class="hljs-number">-1</span>]</span><br><span class="line">        <span class="hljs-keyword">with</span> open(<span class="hljs-string">'./img/%s'</span> % image_name, <span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:</span><br><span class="line">            <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> r.iter_content(chunk_size=<span class="hljs-number">128</span>):</span><br><span class="line">                f.write(chunk)</span><br><span class="line">        print(<span class="hljs-string">'Saved %s'</span> % image_name)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="加速爬虫"><a href="#加速爬虫" class="headerlink" title="加速爬虫"></a>加速爬虫</h2><h3 id="多进程分布式"><a href="#多进程分布式" class="headerlink" title="多进程分布式"></a>多进程分布式</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 倒入模块</span></span><br><span class="line"><span class="hljs-keyword">import</span> multiprocessing <span class="hljs-keyword">as</span> mp</span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen, urljoin</span><br><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="hljs-keyword">import</span> re</span><br><span class="line">base_url = <span class="hljs-string">"http://127.0.0.1:4000/"</span></span><br><span class="line"><span class="hljs-comment"># base_url = 'https://morvanzhou.github.io/'</span></span><br><span class="line"><span class="hljs-comment"># DON'T OVER CRAWL THE WEBSITE OR YOU MAY NEVER VISIT AGAIN</span></span><br><span class="line"><span class="hljs-keyword">if</span> base_url != <span class="hljs-string">"http://127.0.0.1:4000/"</span>:</span><br><span class="line">    restricted_crawl = <span class="hljs-keyword">True</span></span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    restricted_crawl = <span class="hljs-keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#Create a crawl function to open a url in parallel.</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">crawl</span><span class="hljs-params">(url)</span>:</span></span><br><span class="line">    response = urlopen(url) <span class="hljs-comment">#urlopen函数功能</span></span><br><span class="line">    time.sleep(<span class="hljs-number">0.1</span>)             <span class="hljs-comment"># slightly delay for downloading</span></span><br><span class="line">    <span class="hljs-keyword">return</span> response.read().decode()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#Create a parse function to find all results we need in parallel</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse</span><span class="hljs-params">(html)</span>:</span></span><br><span class="line">    soup = BeautifulSoup(html, <span class="hljs-string">'lxml'</span>)</span><br><span class="line">    urls = soup.find_all(<span class="hljs-string">'a'</span>, &#123;<span class="hljs-string">"href"</span>: re.compile(<span class="hljs-string">'^/.+?/$'</span>)&#125;)</span><br><span class="line">    title = soup.find(<span class="hljs-string">'h1'</span>).get_text().strip()</span><br><span class="line">    page_urls = set([urljoin(base_url, url[<span class="hljs-string">'href'</span>]) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> urls])</span><br><span class="line">    url = soup.find(<span class="hljs-string">'meta'</span>, &#123;<span class="hljs-string">'property'</span>: <span class="hljs-string">"og:url"</span>&#125;)[<span class="hljs-string">'content'</span>]</span><br><span class="line">    <span class="hljs-keyword">return</span> title, page_urls, url</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#Normal way</span></span><br><span class="line"><span class="hljs-comment">#Do not use multiprocessing, test the speed. Firstly, set what urls we have already seen and what we haven't in a python set.</span></span><br><span class="line">unseen = set([base_url,])</span><br><span class="line">seen = set()</span><br><span class="line">count, t1 = <span class="hljs-number">1</span>, time.time()</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">while</span> len(unseen) != <span class="hljs-number">0</span>:       <span class="hljs-comment"># still get some url to visit</span></span><br><span class="line">    <span class="hljs-keyword">if</span> restricted_crawl <span class="hljs-keyword">and</span> len(seen) &gt; <span class="hljs-number">20</span>:</span><br><span class="line">            <span class="hljs-keyword">break</span></span><br><span class="line">        </span><br><span class="line">    print(<span class="hljs-string">'\nDistributed Crawling...'</span>)</span><br><span class="line">    htmls = [crawl(url) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> unseen]</span><br><span class="line"></span><br><span class="line">    print(<span class="hljs-string">'\nDistributed Parsing...'</span>)</span><br><span class="line">    results = [parse(html) <span class="hljs-keyword">for</span> html <span class="hljs-keyword">in</span> htmls]</span><br><span class="line"></span><br><span class="line">    print(<span class="hljs-string">'\nAnalysing...'</span>)</span><br><span class="line">    seen.update(unseen)         <span class="hljs-comment"># seen the crawled</span></span><br><span class="line">    unseen.clear()              <span class="hljs-comment"># nothing unseen</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> title, page_urls, url <span class="hljs-keyword">in</span> results:</span><br><span class="line">        print(count, title, url)</span><br><span class="line">        count += <span class="hljs-number">1</span></span><br><span class="line">        unseen.update(page_urls - seen)     <span class="hljs-comment"># get new url to crawl</span></span><br><span class="line">print(<span class="hljs-string">'Total time: %.1f s'</span> % (time.time()-t1, ))    <span class="hljs-comment"># 53 s</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#multiprocessing</span></span><br><span class="line"><span class="hljs-comment">#Create a process pool and scrape parallelly.</span></span><br><span class="line">unseen = set([base_url,])</span><br><span class="line">seen = set()</span><br><span class="line"></span><br><span class="line">pool = mp.Pool(<span class="hljs-number">4</span>)                       </span><br><span class="line">count, t1 = <span class="hljs-number">1</span>, time.time()</span><br><span class="line"><span class="hljs-keyword">while</span> len(unseen) != <span class="hljs-number">0</span>:                 <span class="hljs-comment"># still get some url to visit</span></span><br><span class="line">    <span class="hljs-keyword">if</span> restricted_crawl <span class="hljs-keyword">and</span> len(seen) &gt; <span class="hljs-number">20</span>:</span><br><span class="line">            <span class="hljs-keyword">break</span></span><br><span class="line">    print(<span class="hljs-string">'\nDistributed Crawling...'</span>)</span><br><span class="line">    crawl_jobs = [pool.apply_async(crawl, args=(url,)) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> unseen]</span><br><span class="line">    htmls = [j.get() <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> crawl_jobs]                                       <span class="hljs-comment"># request connection</span></span><br><span class="line"></span><br><span class="line">    print(<span class="hljs-string">'\nDistributed Parsing...'</span>)</span><br><span class="line">    parse_jobs = [pool.apply_async(parse, args=(html,)) <span class="hljs-keyword">for</span> html <span class="hljs-keyword">in</span> htmls]</span><br><span class="line">    results = [j.get() <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> parse_jobs]                                     <span class="hljs-comment"># parse html</span></span><br><span class="line"></span><br><span class="line">    print(<span class="hljs-string">'\nAnalysing...'</span>)</span><br><span class="line">    seen.update(unseen)         <span class="hljs-comment"># seen the crawled</span></span><br><span class="line">    unseen.clear()              <span class="hljs-comment"># nothing unseen</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> title, page_urls, url <span class="hljs-keyword">in</span> results:</span><br><span class="line">        print(count, title, url)</span><br><span class="line">        count += <span class="hljs-number">1</span></span><br><span class="line">        unseen.update(page_urls - seen)     <span class="hljs-comment"># get new url to crawl</span></span><br><span class="line">print(<span class="hljs-string">'Total time: %.1f s'</span> % (time.time()-t1, ))    <span class="hljs-comment"># 16 s !!!</span></span><br></pre></td></tr></table></figure>
+<h3 id="异步加载Asyncio"><a href="#异步加载Asyncio" class="headerlink" title="异步加载Asyncio"></a>异步加载Asyncio</h3><p>本质是单线程，GIL锁优化，3.5是原生库<br>爬网页用aiohttp<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> aiohttp</span><br><span class="line"><span class="hljs-keyword">import</span> asyncio</span><br><span class="line"><span class="hljs-keyword">import</span> time</span><br><span class="line"><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urljoin</span><br><span class="line"><span class="hljs-keyword">import</span> re</span><br><span class="line"><span class="hljs-keyword">import</span> multiprocessing <span class="hljs-keyword">as</span> mp</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># base_url = "https://morvanzhou.github.io/"</span></span><br><span class="line">base_url = <span class="hljs-string">"http://127.0.0.1:4000/"</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># DON'T OVER CRAWL THE WEBSITE OR YOU MAY NEVER VISIT AGAIN</span></span><br><span class="line"><span class="hljs-keyword">if</span> base_url != <span class="hljs-string">"http://127.0.0.1:4000/"</span>:</span><br><span class="line">    restricted_crawl = <span class="hljs-keyword">True</span></span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    restricted_crawl = <span class="hljs-keyword">False</span></span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">seen = set()</span><br><span class="line">unseen = set([base_url])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse</span><span class="hljs-params">(html)</span>:</span></span><br><span class="line">    soup = BeautifulSoup(html, <span class="hljs-string">'lxml'</span>)</span><br><span class="line">    urls = soup.find_all(<span class="hljs-string">'a'</span>, &#123;<span class="hljs-string">"href"</span>: re.compile(<span class="hljs-string">'^/.+?/$'</span>)&#125;)</span><br><span class="line">    title = soup.find(<span class="hljs-string">'h1'</span>).get_text().strip()</span><br><span class="line">    page_urls = set([urljoin(base_url, url[<span class="hljs-string">'href'</span>]) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> urls])</span><br><span class="line">    url = soup.find(<span class="hljs-string">'meta'</span>, &#123;<span class="hljs-string">'property'</span>: <span class="hljs-string">"og:url"</span>&#125;)[<span class="hljs-string">'content'</span>]</span><br><span class="line">    <span class="hljs-keyword">return</span> title, page_urls, url</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">crawl</span><span class="hljs-params">(url, session)</span>:</span></span><br><span class="line">    r = <span class="hljs-keyword">await</span> session.get(url)</span><br><span class="line">    html = <span class="hljs-keyword">await</span> r.text()</span><br><span class="line">    <span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">0.1</span>)        <span class="hljs-comment"># slightly delay for downloading</span></span><br><span class="line">    <span class="hljs-keyword">return</span> html</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(loop)</span>:</span></span><br><span class="line">    pool = mp.Pool(<span class="hljs-number">8</span>)               <span class="hljs-comment"># slightly affected</span></span><br><span class="line">    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> aiohttp.ClientSession() <span class="hljs-keyword">as</span> session:</span><br><span class="line">        count = <span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">while</span> len(unseen) != <span class="hljs-number">0</span>:</span><br><span class="line">            print(<span class="hljs-string">'\nAsync Crawling...'</span>)</span><br><span class="line">            tasks = [loop.create_task(crawl(url, session)) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> unseen]</span><br><span class="line">            finished, unfinished = <span class="hljs-keyword">await</span> asyncio.wait(tasks)</span><br><span class="line">            htmls = [f.result() <span class="hljs-keyword">for</span> f <span class="hljs-keyword">in</span> finished]</span><br><span class="line">            </span><br><span class="line">            print(<span class="hljs-string">'\nDistributed Parsing...'</span>)</span><br><span class="line">            parse_jobs = [pool.apply_async(parse, args=(html,)) <span class="hljs-keyword">for</span> html <span class="hljs-keyword">in</span> htmls]</span><br><span class="line">            results = [j.get() <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> parse_jobs]</span><br><span class="line">            </span><br><span class="line">            print(<span class="hljs-string">'\nAnalysing...'</span>)</span><br><span class="line">            seen.update(unseen)</span><br><span class="line">            unseen.clear()</span><br><span class="line">            <span class="hljs-keyword">for</span> title, page_urls, url <span class="hljs-keyword">in</span> results:</span><br><span class="line">                <span class="hljs-comment"># print(count, title, url)</span></span><br><span class="line">                unseen.update(page_urls - seen)</span><br><span class="line">                count += <span class="hljs-number">1</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:</span><br><span class="line">    t1 = time.time()</span><br><span class="line">    loop = asyncio.get_event_loop()</span><br><span class="line">    loop.run_until_complete(main(loop))</span><br><span class="line">    <span class="hljs-comment"># loop.close()</span></span><br><span class="line">    print(<span class="hljs-string">"Async total time: "</span>, time.time() - t1)</span><br></pre></td></tr></table></figure></p>
+<h2 id="高级爬虫"><a href="#高级爬虫" class="headerlink" title="高级爬虫"></a>高级爬虫</h2><h3 id="Selenium控制浏览器"><a href="#Selenium控制浏览器" class="headerlink" title="Selenium控制浏览器"></a>Selenium控制浏览器</h3><p>安装：<br>pip3 install selenium<br>火狐有插件<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> os</span><br><span class="line">os.makedirs(<span class="hljs-string">'./img/'</span>, exist_ok=<span class="hljs-keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(<span class="hljs-string">"https://morvanzhou.github.io/"</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="hljs-string">u"//img[@alt='强化学习 (Reinforcement Learning)']"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">"About"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"赞助"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"教程 ▾"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"数据处理 ▾"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"网页爬虫"</span>).click()</span><br><span class="line">html = driver.page_source       <span class="hljs-comment"># get html</span></span><br><span class="line">driver.get_screenshot_as_file(<span class="hljs-string">"./img/sreenshot1.png"</span>)</span><br><span class="line">driver.close()</span><br><span class="line">print(html[:<span class="hljs-number">200</span>])</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#如果不要浏览器show</span></span><br><span class="line"><span class="hljs-keyword">from</span> selenium.webdriver.chrome.options <span class="hljs-keyword">import</span> Options</span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="hljs-string">"--headless"</span>)       <span class="hljs-comment"># define headless</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># add the option when creating driver</span></span><br><span class="line">driver = webdriver.Chrome(chrome_options=chrome_options)    </span><br><span class="line">driver.get(<span class="hljs-string">"https://morvanzhou.github.io/"</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="hljs-string">u"//img[@alt='强化学习 (Reinforcement Learning)']"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">"About"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"赞助"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"教程 ▾"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"数据处理 ▾"</span>).click()</span><br><span class="line">driver.find_element_by_link_text(<span class="hljs-string">u"网页爬虫"</span>).click()</span><br><span class="line"></span><br><span class="line">html = driver.page_source           <span class="hljs-comment"># get html</span></span><br><span class="line">driver.get_screenshot_as_file(<span class="hljs-string">"./img/sreenshot2.png"</span>)</span><br><span class="line">driver.close()</span><br><span class="line">print(html[:<span class="hljs-number">200</span>])</span><br></pre></td></tr></table></figure></p>
+<h3 id="Scrapy爬虫库-需要拓展"><a href="#Scrapy爬虫库-需要拓展" class="headerlink" title="Scrapy爬虫库 需要拓展"></a>Scrapy爬虫库 需要拓展</h3><p>是个很大的框架<br><a href="https://www.jianshu.com/p/a8aad3bf4dc4" target="_blank" rel="noopener">https://www.jianshu.com/p/a8aad3bf4dc4</a><br><a href="https://blog.csdn.net/u012150179/article/details/32343635" target="_blank" rel="noopener">https://blog.csdn.net/u012150179/article/details/32343635</a><br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MofanSpider</span><span class="hljs-params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="hljs-string">"mofan"</span></span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="hljs-string">'https://morvanzhou.github.io/'</span>,</span><br><span class="line">    ]</span><br><span class="line">    <span class="hljs-comment"># unseen = set()</span></span><br><span class="line">    <span class="hljs-comment"># seen = set()      # we don't need these two as scrapy will deal with them automatically</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse</span><span class="hljs-params">(self, response)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">yield</span> &#123;     <span class="hljs-comment"># return some results</span></span><br><span class="line">            <span class="hljs-string">'title'</span>: response.css(<span class="hljs-string">'h1::text'</span>).extract_first(default=<span class="hljs-string">'Missing'</span>).strip().replace(<span class="hljs-string">'"'</span>, <span class="hljs-string">""</span>),</span><br><span class="line">            <span class="hljs-string">'url'</span>: response.url,</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        urls = response.css(<span class="hljs-string">'a::attr(href)'</span>).re(<span class="hljs-string">r'^/.+?/$'</span>)     <span class="hljs-comment"># find all sub urls</span></span><br><span class="line">        <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> urls:</span><br><span class="line">            <span class="hljs-keyword">yield</span> response.follow(url, callback=self.parse)     <span class="hljs-comment"># it will filter duplication automatically</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># lastly, run this in terminal</span></span><br><span class="line"><span class="hljs-comment"># scrapy runspider 5-2-scrapy.py -o res.json</span></span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/python/">python</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/14/Wp中数据库Error的解决方法/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">WP的buffer pool报错导致数据库Error的解决方法</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2017/09/23/python-文档/">
+                <span class="level-item">python 文档</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="https://ws1.sinaimg.cn/large/a794a8ccgy1fx6gjojk0jj20fd0fdtrr.jpg" alt="Mr.Sun">
+                    
+                    <p class="is-size-4 is-block">
+                        Mr.Sun
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        在创业、做技术、爱读书、玩户外
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>南京，中国</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        6
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://weibo.cn/diosmios">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/gini0">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Ins" href="https://www.instagram.com/gini0.2">
+                
+                <i class="fab fa-instagram"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Wechat" href="https://ws1.sinaimg.cn/large/a794a8ccgy1fx6h04sne7j20iq0owjty.jpg">
+                
+                <i class="fab fa-weixin"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=605761927&amp;site=qq&amp;menu=yes">
+                
+                <i class="fab fa-qq"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://www.nankinese.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">会否科技</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">https://www.nankinese.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://www.hikeinchina.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">公益项目</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.hikeinchina.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://lovegear.taobao.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">户外小店</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">https://lovegear.taobao.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/技术/">
+            <span class="level-start">
+                <span class="level-item">技术</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/生活/">
+            <span class="level-start">
+                <span class="level-item">生活</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
+    </div>
+</div>
+
+    
+    
+        <div class="card card-transparent is-hidden-widescreen">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T13:28:56.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="has-link-black-ter is-size-6">关于打开网页跳流氓广告解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/“给我做一个类似XX的App”/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“给我做一个类似XX的App”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T11:10:35.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/“给我做一个类似XX的App”/" class="has-link-black-ter is-size-6">“给我做一个类似XX的App”</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/19/怎么优化LAMP的速度/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="怎么优化LAMP的速度">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:54:37.000Z">2018-11-19</time></div>
+                    <a href="/2018/11/19/怎么优化LAMP的速度/" class="has-link-black-ter is-size-6">怎么优化LAMP的速度</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="WP的buffer pool报错导致数据库Error的解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-14T12:18:47.000Z">2018-11-14</time></div>
+                    <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="has-link-black-ter is-size-6">WP的buffer pool报错导致数据库Error的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/10/25/python-爬虫基础/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 爬虫基础">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-25T14:03:05.000Z">2017-10-25</time></div>
+                    <a href="/2017/10/25/python-爬虫基础/" class="has-link-black-ter is-size-6">python 爬虫基础</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/LAMP/">
+                        <span class="level-start">
+                            <span class="level-item">LAMP</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/python/">
+                        <span class="level-start">
+                            <span class="level-item">python</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/wordpress/">
+                        <span class="level-start">
+                            <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/安全/">
+                        <span class="level-start">
+                            <span class="level-item">安全</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/碎碎念/">
+                        <span class="level-start">
+                            <span class="level-item">碎碎念</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T13:28:56.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="has-link-black-ter is-size-6">关于打开网页跳流氓广告解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/“给我做一个类似XX的App”/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“给我做一个类似XX的App”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T11:10:35.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/“给我做一个类似XX的App”/" class="has-link-black-ter is-size-6">“给我做一个类似XX的App”</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/19/怎么优化LAMP的速度/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="怎么优化LAMP的速度">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:54:37.000Z">2018-11-19</time></div>
+                    <a href="/2018/11/19/怎么优化LAMP的速度/" class="has-link-black-ter is-size-6">怎么优化LAMP的速度</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="WP的buffer pool报错导致数据库Error的解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-14T12:18:47.000Z">2018-11-14</time></div>
+                    <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="has-link-black-ter is-size-6">WP的buffer pool报错导致数据库Error的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2017/10/25/python-爬虫基础/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python 爬虫基础">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-10-25T14:03:05.000Z">2017-10-25</time></div>
+                    <a href="/2017/10/25/python-爬虫基础/" class="has-link-black-ter is-size-6">python 爬虫基础</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/LAMP/">
+                        <span class="level-start">
+                            <span class="level-item">LAMP</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/python/">
+                        <span class="level-start">
+                            <span class="level-item">python</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/wordpress/">
+                        <span class="level-start">
+                            <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/安全/">
+                        <span class="level-start">
+                            <span class="level-item">安全</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/碎碎念/">
+                        <span class="level-start">
+                            <span class="level-item">碎碎念</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.jpeg" alt="python 爬虫基础" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 Mr.Sun&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" async></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/animejs@2.2.0/anime.js" defer></script>
+    <script src="/js/animation.js" defer></script>
+    
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    MathJax.Hub.Config({
+        "HTML-CSS": {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
