@@ -143,7 +143,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-11-25T14:38:42.000Z">2018-11-25</time>
+                <time class="level-item has-text-grey" datetime="2018-07-25T06:38:42.000Z">2018-07-25</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/技术/">技术</a>
@@ -161,7 +161,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/11/25/Node-js-MVC框架-笔记整理/">Node.js MVC框架 未完 笔记整理</a>
+                <a class="has-link-black-ter" href="/2018/07/25/Node-js-MVC框架-笔记整理/">Node.js MVC框架 未完 笔记整理</a>
             
         </h1>
         <div class="content">
@@ -187,25 +187,14 @@
 <p>访问：<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="hljs-comment">//localhost:3333/hello?name=sunwei</span></span><br></pre></td></tr></table></figure></p>
 <p>这个路由的视图文件就是：resources ——views——hello.edge</p>
 <h4 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h4><ol>
-<li><p>创建控制器</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:controller Hello</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>选择http request的这个选项</p>
-</li>
-<li>创建目录后添加方法render：<br>render：交给的方法。通俗的讲就是把context的内容, 加载进templates中定义的文件, 并通过浏览器渲染呈现.<br>render(request, template_name, context=None, content_type=None, status=None, using=None)</li>
-</ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloController</span> </span>&#123;</span><br><span class="line">   render(&#123;request&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">`hello~ <span class="hljs-subst">$&#123; request.input(<span class="hljs-string">'name'</span>)&#125;</span>`</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>再在路由中设置：<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/hello'</span>,<span class="hljs-string">'HelloController.render'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<li><p>创建控制器</p></li></ol>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2018/11/25/Node-js-MVC框架-笔记整理/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2018/07/25/Node-js-MVC框架-笔记整理/#more">阅读更多</a>
                 </div>
             </div>
         </div>
@@ -425,25 +414,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-25T14:38:42.000Z">2018-11-25</time></div>
-                    <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
@@ -518,6 +488,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2018/07/25/Node-js-MVC框架-笔记整理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-25T06:38:42.000Z">2018-07-25</time></div>
+                    <a href="/2018/07/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -536,7 +525,18 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -710,25 +710,6 @@
         
         <article class="media">
             
-            <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-25T14:38:42.000Z">2018-11-25</time></div>
-                    <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
@@ -803,6 +784,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2018/07/25/Node-js-MVC框架-笔记整理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-25T06:38:42.000Z">2018-07-25</time></div>
+                    <a href="/2018/07/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -821,7 +821,18 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
