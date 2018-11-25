@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>标签: ml - Mr.Sun的东鳞西爪</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="Think more for the better world">
+<meta name="keywords" content="技术博客，生活分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mr.Sun的东鳞西爪">
+<meta property="og:url" content="/tags/ml/index.html">
+<meta property="og:site_name" content="Mr.Sun的东鳞西爪">
+<meta property="og:description" content="Think more for the better world">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mr.Sun的东鳞西爪">
+<meta name="twitter:description" content="Think more for the better world">
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    <style>body>.navbar,body>.section,body>.footer{opacity: 0}</style>
+    
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.jpeg" alt="Mr.Sun的东鳞西爪" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Email to me" href="mailto:swceo@njhuifou.com">
+                        
+                        <i class="fa fa-envelope"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">ml</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-03-25T07:35:32.000Z">2018-03-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    38 分钟 读完 (大约 5750 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2018/03/25/Tensorflow-学习笔记/">Tensorflow 学习笔记</a>
+            
+        </h1>
+        <div class="content">
+            <p>[TOC]</p>
+<h1 id="Tensorflow"><a href="#Tensorflow" class="headerlink" title="Tensorflow"></a>Tensorflow</h1><h2 id="准备-D1"><a href="#准备-D1" class="headerlink" title="准备 D1"></a>准备 D1</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li>下载地址：<br><a href="https://www.tensorflow.org/install/" target="_blank" rel="noopener">https://www.tensorflow.org/install/</a><br>推荐使用Virtualenv 安装 TensorFlow<br>只用安装某个python的ts<br>每次在新的 shell 中使用 TensorFlow 时，您都必须激活 Virtualenv 环境</li>
+</ol>
+<p>斯坦佛：<a href="http://web.stanford.edu/class/cs20si/" target="_blank" rel="noopener">http://web.stanford.edu/class/cs20si/</a><br>blibli视频：2017<br><a href="https://www.bilibili.com/video/av9156347/?from=search&amp;seid=6905181275544516403" target="_blank" rel="noopener">https://www.bilibili.com/video/av9156347/?from=search&amp;seid=6905181275544516403</a><br>youtube：<a href="https://www.youtube.com/watch?v=g-EvyKpZjmQ&amp;list=PLQ0sVbIj3URf94DQtGPJV629ctn2c1zN-" target="_blank" rel="noopener">https://www.youtube.com/watch?v=g-EvyKpZjmQ&amp;list=PLQ0sVbIj3URf94DQtGPJV629ctn2c1zN-</a></p>
+<p>数据集库：收集数据集<br><a href="https://zhuanlan.zhihu.com/p/35399323" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35399323</a><br><a href="https://deeplearning4j.org/cn/opendata" target="_blank" rel="noopener">https://deeplearning4j.org/cn/opendata</a></p>
+<p>版本：<br>TF learn<br>TF Slim<br>High level API:Keras </p>
+<p>学会使用docker容器：<br>学习python：</p>
+<h3 id="概念-import-tensorflow-as-tf"><a href="#概念-import-tensorflow-as-tf" class="headerlink" title="概念 import tensorflow as tf"></a>概念 import tensorflow as tf</h3><p>本质：产生计算图<br>可视化：tensorboard</p>
+<p>tensor:<br>0-d:number<br>1-d:vector<br>2-d:matrix</p>
+<p>神经网络结构<br>input layer –hidden layer– output layer（拟合数据）<br>怎么处理数据结构：</p>
+<ol>
+<li>建立结构</li>
+<li>放数据进结构里面</li>
+<li>weight 和 baias（权重和偏置）</li>
+</ol>
+<h4 id="GradientDescentOptimizer-优化器"><a href="#GradientDescentOptimizer-优化器" class="headerlink" title="GradientDescentOptimizer 优化器"></a>GradientDescentOptimizer 优化器</h4><p>eg<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line">//create data</span><br><span class="line">x_dara = np.random.rand(<span class="hljs-number">100</span>).astype(np.float32) <span class="hljs-comment"># ts一般数据都是float32的形式</span></span><br><span class="line">y_data = x_data*<span class="hljs-number">0.1</span> + <span class="hljs-number">0.3</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### create tensorflow structure start ###</span></span><br><span class="line">Weights = tf.Variable(tf.random_uniform([<span class="hljs-number">1</span>], <span class="hljs-number">-1.0</span>, <span class="hljs-number">1.0</span>))<span class="hljs-comment"># V大写可能是多维矩阵，[1]表示一维，在-1到1位的范围</span></span><br><span class="line">biases = tf.Variable(tf.zeros([<span class="hljs-number">1</span>])) <span class="hljs-comment"># 设置初始值是0</span></span><br><span class="line"></span><br><span class="line">y = Weights*x_data + biases</span><br><span class="line"></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-y_data))</span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="hljs-number">0.5</span>)<span class="hljs-comment"># 优化器，有很多optimizer，GradientDescentOptimizer，后面是学习效率。</span></span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### create tensorflow structure end ###</span></span><br><span class="line"></span><br><span class="line">sess = tf.Session() //神经网络激活</span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> range(<span class="hljs-number">201</span>):</span><br><span class="line">    sess.run(train)</span><br><span class="line">    <span class="hljs-keyword">if</span> step % <span class="hljs-number">20</span> == <span class="hljs-number">0</span>:</span><br><span class="line">        print(step, sess.run(Weights), sess.run(biases))</span><br></pre></td></tr></table></figure></p>
+<h3 id="sess-run"><a href="#sess-run" class="headerlink" title="sess.run"></a>sess.run</h3><p>矩阵乘法<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">matrix1 = tf.constant([[<span class="hljs-number">3</span>, <span class="hljs-number">3</span>]])</span><br><span class="line">matrix2 = tf.constant([[<span class="hljs-number">2</span>],</span><br><span class="line">                     [<span class="hljs-number">2</span>]])</span><br><span class="line">product = tf.matmul(matrix1, matrix2)  <span class="hljs-comment"># matrix multiply np.dot(m1, m2) 矩阵乘法</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># method 1</span></span><br><span class="line">sess = tf.Session() <span class="hljs-comment"># Session 大写</span></span><br><span class="line">result = sess.run(product)</span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># method 2</span></span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:   <span class="hljs-comment"># 自动关闭，在with语句中</span></span><br><span class="line">    result2 = sess.run(product)</span><br><span class="line">    print(result2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">state = tf.Variable(<span class="hljs-number">0</span>, name=<span class="hljs-string">'counter'</span>) <span class="hljs-comment">#定义一个变量，数值和名字</span></span><br><span class="line"><span class="hljs-comment">#print(state.name)</span></span><br><span class="line">one = tf.constant(<span class="hljs-number">1</span>) <span class="hljs-comment"># 定义一个常量1</span></span><br><span class="line"></span><br><span class="line">new_value = tf.add(state, one) <span class="hljs-comment"># 加法运算</span></span><br><span class="line">update = tf.assign(state, new_value) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12 ，最重要的一步</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>): <span class="hljs-comment"># 做三次循环</span></span><br><span class="line">        sess.run(update)</span><br><span class="line">        print(sess.run(state))</span><br></pre></td></tr></table></figure>
+<h3 id="feeds-和-placeholder-传入值"><a href="#feeds-和-placeholder-传入值" class="headerlink" title="feeds 和 placeholder 传入值"></a>feeds 和 placeholder 传入值</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">input1 = tf.placeholder(tf.float32)</span><br><span class="line">input2 = tf.placeholder(tf.float32)</span><br><span class="line">output = tf.multiply(input1, input2) <span class="hljs-comment">#乘法</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:</span><br><span class="line">    print(sess.run(output, feed_dict=&#123;input1: [<span class="hljs-number">7.</span>], input2: [<span class="hljs-number">2.</span>]&#125;)) <span class="hljs-comment"># 这两个绑定，字典形式</span></span><br></pre></td></tr></table></figure>
+<h3 id="激励函数-activation-function"><a href="#激励函数-activation-function" class="headerlink" title="激励函数 activation function"></a>激励函数 activation function</h3><p>解决不能用线性方程解决的问题<br>y=Wx<br><strong>y=AF(Wx)</strong> 必须可以微分的<br>AF()就是其他的函数，sigmoid，tanh，relu<br>隐藏层只有2-3层，不复杂的时候，任意的都可以；多的要考虑梯度爆炸梯度消失等问题<br>默认：卷积神经网络：relu ；循环神经网络：relu or tanh</p>
+<ol>
+<li>方程：线性，阶梯（-1不激活，1为激励）</li>
+<li>非线性：接近于0，或者1（分类问题）<br>tf在layer2层多数，看是否要激活或者不激活 google<strong>tensorflow activation</strong>查看有哪些activation</li>
+</ol>
+<h3 id="添加定义神经层-def"><a href="#添加定义神经层-def" class="headerlink" title="添加定义神经层 def"></a>添加定义神经层 def</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_layer</span><span class="hljs-params">(inputs, in_size, out_size, activation_function=None)</span>:</span> <span class="hljs-comment">#添加一个层，传入数据</span></span><br><span class="line">    Weights = tf.Variable(tf.random_normal([in_size, out_size])) <span class="hljs-comment">#定义矩阵就大写，in_size和out_size 的随机矩阵</span></span><br><span class="line">    biases = tf.Variable(tf.zeros([<span class="hljs-number">1</span>, out_size]) + <span class="hljs-number">0.1</span>) <span class="hljs-comment">#1行，out_size列，推荐不为0</span></span><br><span class="line">    Wx_plus_b = tf.matmul(inputs, Weights) + biases</span><br><span class="line">    <span class="hljs-keyword">if</span> activation_function <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>: <span class="hljs-comment">#就是一个线性函数，就不用加层</span></span><br><span class="line">        outputs = Wx_plus_b</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        outputs = activation_function(Wx_plus_b)</span><br><span class="line">    <span class="hljs-keyword">return</span> outputs</span><br></pre></td></tr></table></figure>
+<h3 id="建造一个神经网络"><a href="#建造一个神经网络" class="headerlink" title="建造一个神经网络"></a>建造一个神经网络</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np <span class="hljs-comment">#用到numpy</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_layer</span><span class="hljs-params">(inputs, in_size, out_size, activation_function=None)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># add one more layer and return the output of this layer</span></span><br><span class="line">    Weights = tf.Variable(tf.random_normal([in_size, out_size]))</span><br><span class="line">    biases = tf.Variable(tf.zeros([<span class="hljs-number">1</span>, out_size]) + <span class="hljs-number">0.1</span>)</span><br><span class="line">    Wx_plus_b = tf.matmul(inputs, Weights) + biases</span><br><span class="line">    <span class="hljs-keyword">if</span> activation_function <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">        outputs = Wx_plus_b</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        outputs = activation_function(Wx_plus_b)</span><br><span class="line">    <span class="hljs-keyword">return</span> outputs</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Make up some real data </span></span><br><span class="line">x_data = np.linspace(<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">300</span>)[:, np.newaxis] <span class="hljs-comment">#-1-1区间有300个单位，300行，加一个维度</span></span><br><span class="line">noise = np.random.normal(<span class="hljs-number">0</span>, <span class="hljs-number">0.05</span>, x_data.shape) <span class="hljs-comment"># 加入噪点，不完全拟合，方差是0.05，和xdata一个格式</span></span><br><span class="line">y_data = np.square(x_data) - <span class="hljs-number">0.5</span> + noise <span class="hljs-comment">#用nonliner，二次方</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># define placeholder for inputs to network </span></span><br><span class="line">xs = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">1</span>])  </span><br><span class="line">ys = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">1</span>])</span><br><span class="line"><span class="hljs-comment"># add hidden layer</span></span><br><span class="line">l1 = add_layer(xs, <span class="hljs-number">1</span>, <span class="hljs-number">10</span>, activation_function=tf.nn.relu) <span class="hljs-comment">#in_size=1，，一个参数，output_size是10，就是输出10个神经元，激活函数。</span></span><br><span class="line"><span class="hljs-comment"># add output layer 隐藏层的输出值，输入10个，输出1个。没有激活函数</span></span><br><span class="line">prediction = add_layer(l1, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>, activation_function=<span class="hljs-keyword">None</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># the error between prediction and real data 平方差公式tf.square，然后求和tf.reduce_sum，平均误差tf.reduce_mean，reduction_indices=[1]定义轴，学习率是0.1，</span></span><br><span class="line">loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction),</span><br><span class="line">                     reduction_indices=[<span class="hljs-number">1</span>]))</span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="hljs-number">0.1</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># important step</span></span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">sess = tf.Session()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000</span>):</span><br><span class="line">    <span class="hljs-comment"># training</span></span><br><span class="line">    sess.run(train_step, feed_dict=&#123;xs: x_data, ys: y_data&#125;)</span><br><span class="line">    <span class="hljs-keyword">if</span> i % <span class="hljs-number">50</span> == <span class="hljs-number">0</span>:</span><br><span class="line">        <span class="hljs-comment"># to see the step improvement</span></span><br><span class="line">        print(sess.run(loss, feed_dict=&#123;xs: x_data, ys: y_data&#125;))</span><br></pre></td></tr></table></figure>
+<h4 id="结果可视化-？？？"><a href="#结果可视化-？？？" class="headerlink" title="结果可视化 ？？？"></a>结果可视化 ？？？</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt</span><br><span class="line"><span class="hljs-comment"># plot the real data</span></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = fig.add_subplot(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)</span><br><span class="line">ax.scatter(x_data, y_data)</span><br><span class="line">plt.ion()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000</span>):</span><br><span class="line">    <span class="hljs-comment"># training</span></span><br><span class="line">    sess.run(train_step, feed_dict=&#123;xs: x_data, ys: y_data&#125;)</span><br><span class="line">    <span class="hljs-keyword">if</span> i % <span class="hljs-number">50</span> == <span class="hljs-number">0</span>:</span><br><span class="line">        <span class="hljs-comment"># to visualize the result and improvement</span></span><br><span class="line">        <span class="hljs-keyword">try</span>:</span><br><span class="line">            ax.lines.remove(lines[<span class="hljs-number">0</span>])</span><br><span class="line">        <span class="hljs-keyword">except</span> Exception:</span><br><span class="line">            <span class="hljs-keyword">pass</span></span><br><span class="line">        prediction_value = sess.run(prediction, feed_dict=&#123;xs: x_data&#125;)</span><br><span class="line">        <span class="hljs-comment"># plot the prediction</span></span><br><span class="line">        lines = ax.plot(x_data, prediction_value, <span class="hljs-string">'r-'</span>, lw=<span class="hljs-number">5</span>)</span><br><span class="line">        plt.pause(<span class="hljs-number">0.1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="SGD-stochastic-gradient-descent"><a href="#SGD-stochastic-gradient-descent" class="headerlink" title="SGD stochastic gradient descent"></a>SGD stochastic gradient descent</h3><p>每次使用批量数据<br>Mementum<br>Adagrad<br>RMSProp 两者合成<br>Adam 方法最好</p>
+<h3 id="Optimizer-优化器"><a href="#Optimizer-优化器" class="headerlink" title="Optimizer 优化器"></a>Optimizer 优化器</h3><p><a href="https://www.tensorflow.org/api_guides/python/train" target="_blank" rel="noopener">https://www.tensorflow.org/api_guides/python/train</a></p>
+<h3 id="可视化的好帮手-Tensorboard"><a href="#可视化的好帮手-Tensorboard" class="headerlink" title="可视化的好帮手 Tensorboard"></a>可视化的好帮手 Tensorboard</h3><p>Tensorboard<br>with tf.name_scope(‘layer’):<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_layer</span><span class="hljs-params">(inputs, in_size, out_size, activation_function=None)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># add one more layer and return the output of this layer</span></span><br><span class="line">    <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'layer'</span>):</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'weights'</span>):</span><br><span class="line">            Weights = tf.Variable(tf.random_normal([in_size, out_size]), name=<span class="hljs-string">'W'</span>)</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'biases'</span>):</span><br><span class="line">            biases = tf.Variable(tf.zeros([<span class="hljs-number">1</span>, out_size]) + <span class="hljs-number">0.1</span>, name=<span class="hljs-string">'b'</span>)</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'Wx_plus_b'</span>):</span><br><span class="line">            Wx_plus_b = tf.add(tf.matmul(inputs, Weights), biases)</span><br><span class="line">        <span class="hljs-keyword">if</span> activation_function <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">            outputs = Wx_plus_b</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            outputs = activation_function(Wx_plus_b, )</span><br><span class="line">        <span class="hljs-keyword">return</span> outputs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># define placeholder for inputs to network</span></span><br><span class="line"><span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'inputs'</span>):</span><br><span class="line">    xs = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">1</span>], name=<span class="hljs-string">'x_input'</span>)</span><br><span class="line">    ys = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">1</span>], name=<span class="hljs-string">'y_input'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># add hidden layer</span></span><br><span class="line">l1 = add_layer(xs, <span class="hljs-number">1</span>, <span class="hljs-number">10</span>, activation_function=tf.nn.relu)</span><br><span class="line"><span class="hljs-comment"># add output layer</span></span><br><span class="line">prediction = add_layer(l1, <span class="hljs-number">10</span>, <span class="hljs-number">1</span>, activation_function=<span class="hljs-keyword">None</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># the error between prediciton and real data</span></span><br><span class="line"><span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'loss'</span>):</span><br><span class="line">    loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction),</span><br><span class="line">                                        reduction_indices=[<span class="hljs-number">1</span>]))</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'train'</span>):</span><br><span class="line">    train_step = tf.train.GradientDescentOptimizer(<span class="hljs-number">0.1</span>).minimize(loss)</span><br><span class="line"></span><br><span class="line">sess = tf.Session()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># tf.train.SummaryWriter soon be deprecated, use following</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:  <span class="hljs-comment"># tensorflow version &lt; 0.12</span></span><br><span class="line">    writer = tf.train.SummaryWriter(<span class="hljs-string">'logs/'</span>, sess.graph)</span><br><span class="line"><span class="hljs-keyword">else</span>: <span class="hljs-comment"># tensorflow version &gt;= 0.12</span></span><br><span class="line">    writer = tf.summary.FileWriter(<span class="hljs-string">"logs/"</span>, sess.graph)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># direct to the local dir and run this in terminal:</span></span><br><span class="line"><span class="hljs-comment"># $ tensorboard --logdir=logs</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="分类学习-MNIST"><a href="#分类学习-MNIST" class="headerlink" title="分类学习 MNIST"></a>分类学习 MNIST</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">from</span> tensorflow.examples.tutorials.mnist <span class="hljs-keyword">import</span> input_data</span><br><span class="line"><span class="hljs-comment"># number 1 to 10 data</span></span><br><span class="line">mnist = input_data.read_data_sets(<span class="hljs-string">'MNIST_data'</span>, one_hot=<span class="hljs-keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_layer</span><span class="hljs-params">(inputs, in_size, out_size, activation_function=None,)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># add one more layer and return the output of this layer</span></span><br><span class="line">    Weights = tf.Variable(tf.random_normal([in_size, out_size]))</span><br><span class="line">    biases = tf.Variable(tf.zeros([<span class="hljs-number">1</span>, out_size]) + <span class="hljs-number">0.1</span>,)</span><br><span class="line">    Wx_plus_b = tf.matmul(inputs, Weights) + biases</span><br><span class="line">    <span class="hljs-keyword">if</span> activation_function <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">        outputs = Wx_plus_b</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        outputs = activation_function(Wx_plus_b,)</span><br><span class="line">    <span class="hljs-keyword">return</span> outputs</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">compute_accuracy</span><span class="hljs-params">(v_xs, v_ys)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">global</span> prediction</span><br><span class="line">    y_pre = sess.run(prediction, feed_dict=&#123;xs: v_xs&#125;)</span><br><span class="line">    correct_prediction = tf.equal(tf.argmax(y_pre,<span class="hljs-number">1</span>), tf.argmax(v_ys,<span class="hljs-number">1</span>))</span><br><span class="line">    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</span><br><span class="line">    result = sess.run(accuracy, feed_dict=&#123;xs: v_xs, ys: v_ys&#125;)</span><br><span class="line">    <span class="hljs-keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># define placeholder for inputs to network</span></span><br><span class="line">xs = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">784</span>]) <span class="hljs-comment"># 28x28</span></span><br><span class="line">ys = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># add output layer</span></span><br><span class="line">prediction = add_layer(xs, <span class="hljs-number">784</span>, <span class="hljs-number">10</span>,  activation_function=tf.nn.softmax)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># the error between prediction and real data </span></span><br><span class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction),</span><br><span class="line">                                              reduction_indices=[<span class="hljs-number">1</span>]))       <span class="hljs-comment"># loss</span></span><br><span class="line">train_step = tf.train.GradientDescentOptimizer(<span class="hljs-number">0.5</span>).minimize(cross_entropy)</span><br><span class="line"></span><br><span class="line">sess = tf.Session()</span><br><span class="line"><span class="hljs-comment"># important step</span></span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000</span>):</span><br><span class="line">    batch_xs, batch_ys = mnist.train.next_batch(<span class="hljs-number">100</span>)</span><br><span class="line">    sess.run(train_step, feed_dict=&#123;xs: batch_xs, ys: batch_ys&#125;)</span><br><span class="line">    <span class="hljs-keyword">if</span> i % <span class="hljs-number">50</span> == <span class="hljs-number">0</span>:</span><br><span class="line">        print(compute_accuracy(</span><br><span class="line">            mnist.test.images, mnist.test.labels))</span><br></pre></td></tr></table></figure>
+<h3 id="过度拟合"><a href="#过度拟合" class="headerlink" title="过度拟合"></a>过度拟合</h3><ol>
+<li>增加数据量</li>
+<li>L1，L2正规化</li>
+<li>dropout </li>
+</ol>
+<h4 id="过度拟合的dropout"><a href="#过度拟合的dropout" class="headerlink" title="过度拟合的dropout"></a>过度拟合的dropout</h4><p>ref:Sklearn:<br><a href="https://morvanzhou.github.io/tutorials/machine-learning/sklearn/1-1-A-ML/" target="_blank" rel="noopener">https://morvanzhou.github.io/tutorials/machine-learning/sklearn/1-1-A-ML/</a><br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># here to dropout 50%舍弃掉</span></span><br><span class="line">Wx_plus_b = tf.nn.dropout(Wx_plus_b, keep_prob)</span><br><span class="line"><span class="hljs-keyword">if</span> activation_function <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:</span><br><span class="line">    outputs = Wx_plus_b</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    outputs = activation_function(Wx_plus_b, )</span><br><span class="line">tf.summary.histogram(layer_name + <span class="hljs-string">'/outputs'</span>, outputs)</span><br><span class="line"><span class="hljs-keyword">return</span> outputs</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># define placeholder for inputs to network</span></span><br><span class="line">keep_prob = tf.placeholder(tf.float32)</span><br><span class="line">xs = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">64</span>])  <span class="hljs-comment"># 8x8</span></span><br><span class="line">ys = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">10</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># here to determine the keeping probability</span></span><br><span class="line">sess.run(train_step, feed_dict=&#123;xs: X_train, ys: y_train, keep_prob: <span class="hljs-number">0.5</span>&#125;)</span><br><span class="line">    </span><br><span class="line"><span class="hljs-comment">#一定要有histogram_summary</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="CNN-卷积神经网络"><a href="#CNN-卷积神经网络" class="headerlink" title="CNN 卷积神经网络"></a>CNN 卷积神经网络</h3><h4 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h4><p>alpha go<br>卷积神经网络有一个批量过滤器, 持续不断的在图片上滚动收集图片里的信息,每一次收集的时候都只是收集一小块像素区域, 然后把收集来的信息进行整理, 这时候整理出来的信息有了一些实际上的呈现。<br>图片是如何被卷积的. 下面是一张猫的图片, 图片有长, 宽, 高 三个参数. 图片是有高度的! 这里的高指的是计算机用于产生颜色使用的信息. 如果是黑白照片的话, 高的单位就只有1, 如果是彩色照片, 就可能有红绿蓝三种颜色的信息, 这时的高度为3。</p>
+<p>将图片的长宽再压缩, 高度再增加, 就有了对输入图片更深的理解。</p>
+<p>池化（pooling）：在每一次卷积的时候, 神经层可能会无意地丢失一些信息. 这时, 池化 (pooling) 就可以很好地解决这一问题。</p>
+<p>流行的CNN结构：<br><img src="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1668" alt="2ec0f3d8b495841eec9eaea8e9bf1de4.png"></p>
+<h4 id="CNN进阶"><a href="#CNN进阶" class="headerlink" title="CNN进阶"></a>CNN进阶</h4><p>google 自己的CNN介绍<br>不断压缩——————运用厚度信息变成一个分类器（classifier）<br>抽离参数：stride（几个像素点）在patch（kernal）里面<br>方式是padding 两种方式<br>另外就是pooling 也分为两种</p>
+<h4 id="CNN代码实现"><a href="#CNN代码实现" class="headerlink" title="CNN代码实现"></a>CNN代码实现</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">Please note, this code is only for python 3+. If you are using python 2+, please modify the code accordingly.</span></span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">from</span> tensorflow.examples.tutorials.mnist <span class="hljs-keyword">import</span> input_data</span><br><span class="line"><span class="hljs-comment"># number 1 to 10 data</span></span><br><span class="line">mnist = input_data.read_data_sets(<span class="hljs-string">'MNIST_data'</span>, one_hot=<span class="hljs-keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">compute_accuracy</span><span class="hljs-params">(v_xs, v_ys)</span>:</span></span><br><span class="line">    <span class="hljs-keyword">global</span> prediction</span><br><span class="line">    y_pre = sess.run(prediction, feed_dict=&#123;xs: v_xs, keep_prob: <span class="hljs-number">1</span>&#125;)</span><br><span class="line">    correct_prediction = tf.equal(tf.argmax(y_pre,<span class="hljs-number">1</span>), tf.argmax(v_ys,<span class="hljs-number">1</span>))</span><br><span class="line">    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))</span><br><span class="line">    result = sess.run(accuracy, feed_dict=&#123;xs: v_xs, ys: v_ys, keep_prob: <span class="hljs-number">1</span>&#125;)</span><br><span class="line">    <span class="hljs-keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">weight_variable</span><span class="hljs-params">(shape)</span>:</span></span><br><span class="line">    initial = tf.truncated_normal(shape, stddev=<span class="hljs-number">0.1</span>) <span class="hljs-comment">#tf.truncted_normal产生随机变量来进行初始化</span></span><br><span class="line">    <span class="hljs-keyword">return</span> tf.Variable(initial)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bias_variable</span><span class="hljs-params">(shape)</span>:</span></span><br><span class="line">    initial = tf.constant(<span class="hljs-number">0.1</span>, shape=shape)<span class="hljs-comment">#tf.constant常量函数来进行初始化,初始值是0.1，正值比较好，然后传参。</span></span><br><span class="line">    <span class="hljs-keyword">return</span> tf.Variable(initial)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">conv2d</span><span class="hljs-params">(x, W)</span>:</span><span class="hljs-comment">#定义卷积，x是输入值（图片），W是上面的weight</span></span><br><span class="line">    <span class="hljs-comment"># stride [1, x_movement, y_movement, 1]</span></span><br><span class="line">    <span class="hljs-comment"># Must have strides[0] = strides[3] = 1，步长第一和第四个都是1，x是1，y也是1；</span></span><br><span class="line">    <span class="hljs-comment"># 二维的tf.nn.conv2d函数是tensoflow里面的二维的卷积函数，padding,一种是valid（抽取是全部图片里面的），SAME有部分抽取</span></span><br><span class="line">    <span class="hljs-keyword">return</span> tf.nn.conv2d(x, W, strides=[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], padding=<span class="hljs-string">'SAME'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">max_pool_2x2</span><span class="hljs-params">(x)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># stride [1, x_movement, y_movement, 1]，两种方法：max，average，相当于压缩了，因为把图片压缩了，不用传入参数，其他和conv2d类似</span></span><br><span class="line">    <span class="hljs-keyword">return</span> tf.nn.max_pool(x, ksize=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>], strides=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>], padding=<span class="hljs-string">'SAME'</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># define placeholder for inputs to network</span></span><br><span class="line">xs = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">784</span>])/<span class="hljs-number">255.</span>   <span class="hljs-comment"># 28x28</span></span><br><span class="line">ys = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, <span class="hljs-number">10</span>])</span><br><span class="line">keep_prob = tf.placeholder(tf.float32)</span><br><span class="line">x_image = tf.reshape(xs, [<span class="hljs-number">-1</span>, <span class="hljs-number">28</span>, <span class="hljs-number">28</span>, <span class="hljs-number">1</span>]) <span class="hljs-comment">#传入层之前需要改下形状，-1代表先不考虑输入的图片例子多少这个维度，后面的1是channel的数量，因为我们输入的图片是黑白的，因此channel是1，例如如果是RGB图像，那么channel就是3。</span></span><br><span class="line"><span class="hljs-comment"># print(x_image.shape)  # [n_samples, 28,28,1]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## conv1 layer ## 定义卷积层1</span></span><br><span class="line">W_conv1 = weight_variable([<span class="hljs-number">5</span>,<span class="hljs-number">5</span>, <span class="hljs-number">1</span>,<span class="hljs-number">32</span>]) <span class="hljs-comment"># patch 5x5, in size 1, out size 32 ，提取5*5像素的图片，输入1个像素的单位，输出32个像素的色彩高度</span></span><br><span class="line">b_conv1 = bias_variable([<span class="hljs-number">32</span>])<span class="hljs-comment">#32个长度</span></span><br><span class="line">h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1) <span class="hljs-comment"># output size 28x28x32 same方式长款不变还是28，高度变成了32</span></span><br><span class="line">h_pool1 = max_pool_2x2(h_conv1)                                         <span class="hljs-comment"># output size 14x14x32 ，就是28/2，因为pooling的时候步长多了1倍，图片小了1倍</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## conv2 layer ##</span></span><br><span class="line">W_conv2 = weight_variable([<span class="hljs-number">5</span>,<span class="hljs-number">5</span>, <span class="hljs-number">32</span>, <span class="hljs-number">64</span>]) <span class="hljs-comment"># patch 5x5, in size 32, out size 64 ，传入32，传出变成64</span></span><br><span class="line">b_conv2 = bias_variable([<span class="hljs-number">64</span>])</span><br><span class="line">h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2) <span class="hljs-comment"># output size 14x14x64</span></span><br><span class="line">h_pool2 = max_pool_2x2(h_conv2)                                         <span class="hljs-comment"># output size 7x7x64</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## fc1 layer ## 建立全联接层</span></span><br><span class="line">W_fc1 = weight_variable([<span class="hljs-number">7</span>*<span class="hljs-number">7</span>*<span class="hljs-number">64</span>, <span class="hljs-number">1024</span>]) <span class="hljs-comment">#输入的是，输出1024的高度，变得更高</span></span><br><span class="line">b_fc1 = bias_variable([<span class="hljs-number">1024</span>])</span><br><span class="line">h_pool2_flat = tf.reshape(h_pool2, [<span class="hljs-number">-1</span>, <span class="hljs-number">7</span>*<span class="hljs-number">7</span>*<span class="hljs-number">64</span>])<span class="hljs-comment">#变平，先不管多少个样品，由立方体变成扁平，[n_samples, 7, 7, 64] -&gt;&gt; [n_samples, 7*7*64]，改形状</span></span><br><span class="line">h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)<span class="hljs-comment">#做矩阵的乘法</span></span><br><span class="line">h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)<span class="hljs-comment">#做一个dropout的处理，防止过度拟合的情况</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## fc2 layer ##</span></span><br><span class="line">W_fc2 = weight_variable([<span class="hljs-number">1024</span>, <span class="hljs-number">10</span>])<span class="hljs-comment">#输出结果是10位的</span></span><br><span class="line">b_fc2 = bias_variable([<span class="hljs-number">10</span>])</span><br><span class="line">prediction = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)<span class="hljs-comment">#用softmax做分类处理，算概率</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># the error between prediction and real data</span></span><br><span class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(ys * tf.log(prediction),</span><br><span class="line">                                              reduction_indices=[<span class="hljs-number">1</span>]))       <span class="hljs-comment"># loss</span></span><br><span class="line">train_step = tf.train.AdamOptimizer(<span class="hljs-number">1e-4</span>).minimize(cross_entropy)</span><br><span class="line"><span class="hljs-comment">#庞大系统，不用grient的优化器，选一个更小的学习参数</span></span><br><span class="line">sess = tf.Session()</span><br><span class="line"><span class="hljs-comment"># important step</span></span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1000</span>):</span><br><span class="line">    batch_xs, batch_ys = mnist.train.next_batch(<span class="hljs-number">100</span>)</span><br><span class="line">    sess.run(train_step, feed_dict=&#123;xs: batch_xs, ys: batch_ys, keep_prob: <span class="hljs-number">0.5</span>&#125;)</span><br><span class="line">    <span class="hljs-keyword">if</span> i % <span class="hljs-number">50</span> == <span class="hljs-number">0</span>:</span><br><span class="line">        print(compute_accuracy(</span><br><span class="line">            mnist.test.images[:<span class="hljs-number">1000</span>], mnist.test.labels[:<span class="hljs-number">1000</span>]))</span><br></pre></td></tr></table></figure>
+<h3 id="saver-保存和读取"><a href="#saver-保存和读取" class="headerlink" title="saver 保存和读取"></a>saver 保存和读取</h3><p>最后定义dtype以float32的格式，和名字name<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Save to file</span></span><br><span class="line"><span class="hljs-comment"># remember to define the same dtype and shape when restore</span></span><br><span class="line"><span class="hljs-comment"># W = tf.Variable([[1,2,3],[3,4,5]], dtype=tf.float32, name='weights')</span></span><br><span class="line"><span class="hljs-comment"># b = tf.Variable([[1,2,3]], dtype=tf.float32, name='biases')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-comment"># if int((tf.__version__).split('.')[1]) &lt; 12 and int((tf.__version__).split('.')[0]) &lt; 1:</span></span><br><span class="line"><span class="hljs-comment">#     init = tf.initialize_all_variables()</span></span><br><span class="line"><span class="hljs-comment"># else:</span></span><br><span class="line"><span class="hljs-comment">#     init = tf.global_variables_initializer()</span></span><br><span class="line"><span class="hljs-comment">#</span></span><br><span class="line"><span class="hljs-comment"># saver = tf.train.Saver()</span></span><br><span class="line"><span class="hljs-comment">#</span></span><br><span class="line"><span class="hljs-comment"># with tf.Session() as sess:</span></span><br><span class="line"><span class="hljs-comment">#    sess.run(init)</span></span><br><span class="line"><span class="hljs-comment">#    save_path = saver.save(sess, "my_net/save_net.ckpt") #后面是路径，格式是ckpt</span></span><br><span class="line"><span class="hljs-comment">#    print("Save to path: ", save_path)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">################################################</span></span><br><span class="line"><span class="hljs-comment"># restore variables 提取变量</span></span><br><span class="line"><span class="hljs-comment"># redefine the same shape and same type for your variables ，还需要重新的定义，数据类型和形状是一样的要，上面是6个数据，然后形状一个（2，3）向量</span></span><br><span class="line">W = tf.Variable(np.arange(<span class="hljs-number">6</span>).reshape((<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)), dtype=tf.float32, name=<span class="hljs-string">"weights"</span>)</span><br><span class="line">b = tf.Variable(np.arange(<span class="hljs-number">3</span>).reshape((<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)), dtype=tf.float32, name=<span class="hljs-string">"biases"</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># not need init step</span></span><br><span class="line"></span><br><span class="line">saver = tf.train.Saver()</span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:</span><br><span class="line">    saver.restore(sess, <span class="hljs-string">"my_net/save_net.ckpt"</span>)<span class="hljs-comment">#后面是路径</span></span><br><span class="line">    print(<span class="hljs-string">"weights:"</span>, sess.run(W))</span><br><span class="line">    print(<span class="hljs-string">"biases:"</span>, sess.run(b))</span><br></pre></td></tr></table></figure></p>
+<h3 id="RNN-循环神经网络"><a href="#RNN-循环神经网络" class="headerlink" title="RNN 循环神经网络"></a>RNN 循环神经网络</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>st 用来影响 st1时刻，确定yn+1，有顺序的就可以用RNN，CNN用的滤波器的量是同一个，只不过rnn有时间顺序上有，<br><img src="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1669" alt="ef4488c42d2e3e1fa24556f5aa24654b.png"><br>eg：<br><a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-07-B-LSTM/" target="_blank" rel="noopener">https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-07-B-LSTM/</a><br>Tensorflow PyTorch Keras </p>
+<p>Cell：RNN中的滤波器叫cell，区别在于有部分存储。然后输出y2（考量的不仅仅是x2，还有y1）<br>state：上一步的结果叫state，然后输入x2，产生新的state。</p>
+<p>更先进的：上面可能参数1.1的n次方导致梯度爆炸，LSTM RNN（深度学习）解决梯度爆炸消失，多三个控制器，多了一个gate，要不要记住这个点，输出的时候要不要读取，要不要忘记state，就是这个state要不要进入主线。 long short term memory：<br><img src="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1670" alt="2349eede69755bfd139099f0292dfa53.png"></p>
+<h4 id="代码实现（分类例子，mnist）"><a href="#代码实现（分类例子，mnist）" class="headerlink" title="代码实现（分类例子，mnist）"></a>代码实现（分类例子，mnist）</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">from</span> tensorflow.examples.tutorials.mnist <span class="hljs-keyword">import</span> input_data</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># set random seed for comparing the two result calculations</span></span><br><span class="line">tf.set_random_seed(<span class="hljs-number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># this is data</span></span><br><span class="line">mnist = input_data.read_data_sets(<span class="hljs-string">'MNIST_data'</span>, one_hot=<span class="hljs-keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># hyperparameters</span></span><br><span class="line">lr = <span class="hljs-number">0.001</span> <span class="hljs-comment">#学习率</span></span><br><span class="line">training_iters = <span class="hljs-number">100000</span> <span class="hljs-comment">#循环次数</span></span><br><span class="line">batch_size = <span class="hljs-number">128</span> <span class="hljs-comment">#自己定的 每次池子里面拿128个数据</span></span><br><span class="line"></span><br><span class="line">n_inputs = <span class="hljs-number">28</span>   <span class="hljs-comment"># MNIST data input (img shape: 28*28) ，每一次输入一行的像素</span></span><br><span class="line">n_steps = <span class="hljs-number">28</span>    <span class="hljs-comment"># time steps 有28行，输入28步</span></span><br><span class="line">n_hidden_units = <span class="hljs-number">128</span>   <span class="hljs-comment"># neurons in hidden layer  </span></span><br><span class="line">n_classes = <span class="hljs-number">10</span>      <span class="hljs-comment"># MNIST classes (0-9 digits) 分成10个类，0-9</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># tf Graph input</span></span><br><span class="line">x = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, n_steps, n_inputs])</span><br><span class="line">y = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, n_classes])</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Define weights</span></span><br><span class="line">weights = &#123;</span><br><span class="line">    <span class="hljs-comment"># (28, 128) </span></span><br><span class="line">    <span class="hljs-string">'in'</span>: tf.Variable(tf.random_normal([n_inputs, n_hidden_units])),</span><br><span class="line">    <span class="hljs-comment"># (128, 10)</span></span><br><span class="line">    <span class="hljs-string">'out'</span>: tf.Variable(tf.random_normal([n_hidden_units, n_classes]))</span><br><span class="line">&#125;</span><br><span class="line">biases = &#123;</span><br><span class="line">    <span class="hljs-comment"># (128, )</span></span><br><span class="line">    <span class="hljs-string">'in'</span>: tf.Variable(tf.constant(<span class="hljs-number">0.1</span>, shape=[n_hidden_units, ])),</span><br><span class="line">    <span class="hljs-comment"># (10, )</span></span><br><span class="line">    <span class="hljs-string">'out'</span>: tf.Variable(tf.constant(<span class="hljs-number">0.1</span>, shape=[n_classes, ]))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">RNN</span><span class="hljs-params">(X, weights, biases)</span>:</span></span><br><span class="line">    <span class="hljs-comment"># hidden layer for input to cell</span></span><br><span class="line">    <span class="hljs-comment">########################################</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># transpose the inputs shape from 定义传进来的 X ==&gt; (128 batch * 28 steps, 28 inputs)，转换成-1总起来，原始的 X 是 3 维数据, 我们需要把它变成 2 维数据才能使用 weights 的矩阵乘法</span></span><br><span class="line"></span><br><span class="line">    X = tf.reshape(X, [<span class="hljs-number">-1</span>, n_inputs])</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># into hidden</span></span><br><span class="line">    <span class="hljs-comment"># X_in = (128 batch * 28 steps, 输出成128 hidden)</span></span><br><span class="line">    X_in = tf.matmul(X, weights[<span class="hljs-string">'in'</span>]) + biases[<span class="hljs-string">'in'</span>]</span><br><span class="line">    <span class="hljs-comment"># X_in ==&gt; (变成一个三维数据，128 batch, 28 steps, 128 hidden)</span></span><br><span class="line">    X_in = tf.reshape(X_in, [<span class="hljs-number">-1</span>, n_steps, n_hidden_units])</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># cell</span></span><br><span class="line">    <span class="hljs-comment">##########################################</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># basic LSTM Cell.有很多种cell，这边用BasicLSTMCell。初始不忘记为1。dynamic_rnn效果更好，state_is_tuple=True分成主线state（就是cstate）和分线mstate，这个是不是主线的，所以选择true</span></span><br><span class="line">    <span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">        cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden_units, forget_bias=<span class="hljs-number">1.0</span>, state_is_tuple=<span class="hljs-keyword">True</span>)</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_units)</span><br><span class="line">    <span class="hljs-comment"># lstm cell is divided into two parts (c_state, h_state)</span></span><br><span class="line">    init_state = cell.zero_state(batch_size, dtype=tf.float32)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># You have 2 options for following step.</span></span><br><span class="line">    <span class="hljs-comment"># 1: tf.nn.rnn(cell, inputs);</span></span><br><span class="line">    <span class="hljs-comment"># 2: tf.nn.dynamic_rnn(cell, inputs).</span></span><br><span class="line">    <span class="hljs-comment"># If use option 1, you have to modified the shape of X_in, go and check out this:</span></span><br><span class="line">    <span class="hljs-comment"># https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/recurrent_network.py</span></span><br><span class="line">    <span class="hljs-comment"># In here, we go for option 2.</span></span><br><span class="line">    <span class="hljs-comment"># dynamic_rnn receive Tensor (batch, steps, inputs) or (steps, batch, inputs) as X_in.</span></span><br><span class="line">    <span class="hljs-comment"># Make sure the time_major is changed accordingly.outputs是个list，输出两个结果，time_major=False（时间是不是主要第一纬度，这边steps是第二个位置）</span></span><br><span class="line">    outputs, final_state = tf.nn.dynamic_rnn(cell, X_in, initial_state=init_state, time_major=<span class="hljs-keyword">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># hidden layer for output as the final results</span></span><br><span class="line">    <span class="hljs-comment">#############################################</span></span><br><span class="line">    <span class="hljs-comment"># results = tf.matmul(final_state[1], weights['out']) + biases['out']</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment"># # or</span></span><br><span class="line">    <span class="hljs-comment"># unpack to list [(batch, outputs)..] * steps</span></span><br><span class="line">    <span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">        outputs = tf.unpack(tf.transpose(outputs, [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>]))    <span class="hljs-comment"># states is the last outputs</span></span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        outputs = tf.unstack(tf.transpose(outputs, [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>]))</span><br><span class="line">    results = tf.matmul(outputs[<span class="hljs-number">-1</span>], weights[<span class="hljs-string">'out'</span>]) + biases[<span class="hljs-string">'out'</span>]    <span class="hljs-comment"># shape = (128, 10)</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> results</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pred = RNN(x, weights, biases)</span><br><span class="line">cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))</span><br><span class="line">train_op = tf.train.AdamOptimizer(lr).minimize(cost)</span><br><span class="line"></span><br><span class="line">correct_pred = tf.equal(tf.argmax(pred, <span class="hljs-number">1</span>), tf.argmax(y, <span class="hljs-number">1</span>))</span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:</span><br><span class="line">    <span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line">    <span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line">    <span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">        init = tf.initialize_all_variables()</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        init = tf.global_variables_initializer()</span><br><span class="line">    sess.run(init)</span><br><span class="line">    step = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">while</span> step * batch_size &lt; training_iters:</span><br><span class="line">        batch_xs, batch_ys = mnist.train.next_batch(batch_size)</span><br><span class="line">        batch_xs = batch_xs.reshape([batch_size, n_steps, n_inputs])</span><br><span class="line">        sess.run([train_op], feed_dict=&#123;</span><br><span class="line">            x: batch_xs,</span><br><span class="line">            y: batch_ys,</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="hljs-keyword">if</span> step % <span class="hljs-number">20</span> == <span class="hljs-number">0</span>:</span><br><span class="line">            print(sess.run(accuracy, feed_dict=&#123;</span><br><span class="line">            x: batch_xs,</span><br><span class="line">            y: batch_ys,</span><br><span class="line">            &#125;))</span><br><span class="line">        step += <span class="hljs-number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="Rnn-回归例子"><a href="#Rnn-回归例子" class="headerlink" title="Rnn 回归例子"></a>Rnn 回归例子</h3><p>基于tf0.10<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># View more python learning tutorial on my Youtube and Youku channel!!!</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Youtube video tutorial: https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg</span></span><br><span class="line"><span class="hljs-comment"># Youku video tutorial: http://i.youku.com/pythontutorial</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">Please note, this code is only for python 3+. If you are using python 2+, please modify the code accordingly.</span></span><br><span class="line"><span class="hljs-string">Run this script on tensorflow r0.10. Errors appear when using lower versions.</span></span><br><span class="line"><span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">BATCH_START = <span class="hljs-number">0</span></span><br><span class="line">TIME_STEPS = <span class="hljs-number">20</span></span><br><span class="line">BATCH_SIZE = <span class="hljs-number">50</span></span><br><span class="line">INPUT_SIZE = <span class="hljs-number">1</span></span><br><span class="line">OUTPUT_SIZE = <span class="hljs-number">1</span></span><br><span class="line">CELL_SIZE = <span class="hljs-number">10</span></span><br><span class="line">LR = <span class="hljs-number">0.006</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_batch</span><span class="hljs-params">()</span>:</span> <span class="hljs-comment">#生成数据的function</span></span><br><span class="line">    <span class="hljs-keyword">global</span> BATCH_START, TIME_STEPS</span><br><span class="line">    <span class="hljs-comment"># xs shape (50batch, 20steps)</span></span><br><span class="line">    xs = np.arange(BATCH_START, BATCH_START+TIME_STEPS*BATCH_SIZE).reshape((BATCH_SIZE, TIME_STEPS)) / (<span class="hljs-number">10</span>*np.pi)</span><br><span class="line">    seq = np.sin(xs)</span><br><span class="line">    res = np.cos(xs)</span><br><span class="line">    BATCH_START += TIME_STEPS</span><br><span class="line">    <span class="hljs-comment"># plt.plot(xs[0, :], res[0, :], 'r', xs[0, :], seq[0, :], 'b--')</span></span><br><span class="line">    <span class="hljs-comment"># plt.show()</span></span><br><span class="line">    <span class="hljs-comment"># returned seq, res and xs: shape (batch, step, input)</span></span><br><span class="line">    <span class="hljs-keyword">return</span> [seq[:, :, np.newaxis], res[:, :, np.newaxis], xs]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LSTMRNN</span><span class="hljs-params">(object)</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, n_steps, input_size, output_size, cell_size, batch_size)</span>:</span></span><br><span class="line">        self.n_steps = n_steps</span><br><span class="line">        self.input_size = input_size</span><br><span class="line">        self.output_size = output_size</span><br><span class="line">        self.cell_size = cell_size</span><br><span class="line">        self.batch_size = batch_size</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'inputs'</span>):</span><br><span class="line">            self.xs = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, n_steps, input_size], name=<span class="hljs-string">'xs'</span>)</span><br><span class="line">            self.ys = tf.placeholder(tf.float32, [<span class="hljs-keyword">None</span>, n_steps, output_size], name=<span class="hljs-string">'ys'</span>)</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.variable_scope(<span class="hljs-string">'in_hidden'</span>):</span><br><span class="line">            self.add_input_layer()</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.variable_scope(<span class="hljs-string">'LSTM_cell'</span>):</span><br><span class="line">            self.add_cell()</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.variable_scope(<span class="hljs-string">'out_hidden'</span>):</span><br><span class="line">            self.add_output_layer()</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'cost'</span>):</span><br><span class="line">            self.compute_cost()</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'train'</span>):</span><br><span class="line">            self.train_op = tf.train.AdamOptimizer(LR).minimize(self.cost)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_input_layer</span><span class="hljs-params">(self,)</span>:</span></span><br><span class="line">        l_in_x = tf.reshape(self.xs, [<span class="hljs-number">-1</span>, self.input_size], name=<span class="hljs-string">'2_2D'</span>)  <span class="hljs-comment"># (batch*n_step, in_size，把三维数据改成二维)</span></span><br><span class="line">        <span class="hljs-comment"># Ws (in_size, cell_size)</span></span><br><span class="line">        Ws_in = self._weight_variable([self.input_size, self.cell_size])</span><br><span class="line">        <span class="hljs-comment"># bs (cell_size, )</span></span><br><span class="line">        bs_in = self._bias_variable([self.cell_size,])</span><br><span class="line">        <span class="hljs-comment"># l_in_y = (batch * n_steps, cell_size)</span></span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'Wx_plus_b'</span>):</span><br><span class="line">            l_in_y = tf.matmul(l_in_x, Ws_in) + bs_in</span><br><span class="line">        <span class="hljs-comment"># reshape l_in_y ==&gt; (batch, n_steps, cell_size)，再转化成3d</span></span><br><span class="line">        self.l_in_y = tf.reshape(l_in_y, [<span class="hljs-number">-1</span>, self.n_steps, self.cell_size], name=<span class="hljs-string">'2_3D'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_cell</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        lstm_cell = tf.contrib.rnn.BasicLSTMCell(self.cell_size, forget_bias=<span class="hljs-number">1.0</span>, state_is_tuple=<span class="hljs-keyword">True</span>)</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'initial_state'</span>):</span><br><span class="line">            self.cell_init_state = lstm_cell.zero_state(self.batch_size, dtype=tf.float32)</span><br><span class="line">        self.cell_outputs, self.cell_final_state = tf.nn.dynamic_rnn(</span><br><span class="line">            lstm_cell, self.l_in_y, initial_state=self.cell_init_state, time_major=<span class="hljs-keyword">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_output_layer</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        <span class="hljs-comment"># shape = (batch * steps, cell_size)</span></span><br><span class="line">        l_out_x = tf.reshape(self.cell_outputs, [<span class="hljs-number">-1</span>, self.cell_size], name=<span class="hljs-string">'2_2D'</span>)</span><br><span class="line">        Ws_out = self._weight_variable([self.cell_size, self.output_size])</span><br><span class="line">        bs_out = self._bias_variable([self.output_size, ])</span><br><span class="line">        <span class="hljs-comment"># shape = (batch * steps, output_size)</span></span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'Wx_plus_b'</span>):</span><br><span class="line">            self.pred = tf.matmul(l_out_x, Ws_out) + bs_out</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">compute_cost</span><span class="hljs-params">(self)</span>:</span></span><br><span class="line">        losses = tf.contrib.legacy_seq2seq.sequence_loss_by_example(</span><br><span class="line">            [tf.reshape(self.pred, [<span class="hljs-number">-1</span>], name=<span class="hljs-string">'reshape_pred'</span>)],</span><br><span class="line">            [tf.reshape(self.ys, [<span class="hljs-number">-1</span>], name=<span class="hljs-string">'reshape_target'</span>)],</span><br><span class="line">            [tf.ones([self.batch_size * self.n_steps], dtype=tf.float32)],</span><br><span class="line">            average_across_timesteps=<span class="hljs-keyword">True</span>,</span><br><span class="line">            softmax_loss_function=self.ms_error,</span><br><span class="line">            name=<span class="hljs-string">'losses'</span></span><br><span class="line">        )</span><br><span class="line">        <span class="hljs-keyword">with</span> tf.name_scope(<span class="hljs-string">'average_cost'</span>):</span><br><span class="line">            self.cost = tf.div(</span><br><span class="line">                tf.reduce_sum(losses, name=<span class="hljs-string">'losses_sum'</span>),</span><br><span class="line">                self.batch_size,</span><br><span class="line">                name=<span class="hljs-string">'average_cost'</span>)</span><br><span class="line">            tf.summary.scalar(<span class="hljs-string">'cost'</span>, self.cost)</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">    @staticmethod</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">ms_error</span><span class="hljs-params">(labels, logits)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">return</span> tf.square(tf.subtract(labels, logits))</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_weight_variable</span><span class="hljs-params">(self, shape, name=<span class="hljs-string">'weights'</span>)</span>:</span></span><br><span class="line">        initializer = tf.random_normal_initializer(mean=<span class="hljs-number">0.</span>, stddev=<span class="hljs-number">1.</span>,)</span><br><span class="line">        <span class="hljs-keyword">return</span> tf.get_variable(shape=shape, initializer=initializer, name=name)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_bias_variable</span><span class="hljs-params">(self, shape, name=<span class="hljs-string">'biases'</span>)</span>:</span></span><br><span class="line">        initializer = tf.constant_initializer(<span class="hljs-number">0.1</span>)</span><br><span class="line">        <span class="hljs-keyword">return</span> tf.get_variable(name=name, shape=shape, initializer=initializer)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:</span><br><span class="line">    model = LSTMRNN(TIME_STEPS, INPUT_SIZE, OUTPUT_SIZE, CELL_SIZE, BATCH_SIZE)</span><br><span class="line">    sess = tf.Session()</span><br><span class="line">    merged = tf.summary.merge_all()</span><br><span class="line">    writer = tf.summary.FileWriter(<span class="hljs-string">"logs"</span>, sess.graph)</span><br><span class="line">    <span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line">    <span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line">    <span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">        init = tf.initialize_all_variables()</span><br><span class="line">    <span class="hljs-keyword">else</span>:</span><br><span class="line">        init = tf.global_variables_initializer()</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="hljs-comment"># relocate to the local dir and run this line to view it on Chrome (http://0.0.0.0:6006/):</span></span><br><span class="line">    <span class="hljs-comment"># $ tensorboard --logdir='logs'</span></span><br><span class="line"></span><br><span class="line">    plt.ion()</span><br><span class="line">    plt.show()</span><br><span class="line">    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">200</span>):</span><br><span class="line">        seq, res, xs = get_batch()</span><br><span class="line">        <span class="hljs-keyword">if</span> i == <span class="hljs-number">0</span>:</span><br><span class="line">            feed_dict = &#123;</span><br><span class="line">                    model.xs: seq,</span><br><span class="line">                    model.ys: res,</span><br><span class="line">                    <span class="hljs-comment"># create initial state</span></span><br><span class="line">            &#125;</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            feed_dict = &#123;</span><br><span class="line">                model.xs: seq,</span><br><span class="line">                model.ys: res,</span><br><span class="line">                model.cell_init_state: state    <span class="hljs-comment"># use last state as the initial state for this run</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        _, cost, state, pred = sess.run(</span><br><span class="line">            [model.train_op, model.cost, model.cell_final_state, model.pred],</span><br><span class="line">            feed_dict=feed_dict)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment"># plotting</span></span><br><span class="line">        plt.plot(xs[<span class="hljs-number">0</span>, :], res[<span class="hljs-number">0</span>].flatten(), <span class="hljs-string">'r'</span>, xs[<span class="hljs-number">0</span>, :], pred.flatten()[:TIME_STEPS], <span class="hljs-string">'b--'</span>)</span><br><span class="line">        plt.ylim((<span class="hljs-number">-1.2</span>, <span class="hljs-number">1.2</span>))</span><br><span class="line">        plt.draw()</span><br><span class="line">        plt.pause(<span class="hljs-number">0.3</span>)</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> i % <span class="hljs-number">20</span> == <span class="hljs-number">0</span>:</span><br><span class="line">            print(<span class="hljs-string">'cost: '</span>, round(cost, <span class="hljs-number">4</span>))</span><br><span class="line">            result = sess.run(merged, feed_dict)</span><br><span class="line">            writer.add_summary(result, i)</span><br></pre></td></tr></table></figure></p>
+<h2 id="自编码（非监督学习）-autoencoder"><a href="#自编码（非监督学习）-autoencoder" class="headerlink" title="自编码（非监督学习） autoencoder"></a>自编码（非监督学习） autoencoder</h2><p>X——原数据精髓——黑的X<br>编码器能得到原数据的精髓, 然后我们只需要再创建一个小的神经网络学习这个精髓的数据,不仅减少了神经网络的负担, 而且同样能达到很好的效果.<br>PCA ？？？</p>
+<p><a href="https://github.com/MorvanZhou/tutorials/blob/master/tensorflowTUT/tf21_autoencoder/full_code.py" target="_blank" rel="noopener">https://github.com/MorvanZhou/tutorials/blob/master/tensorflowTUT/tf21_autoencoder/full_code.py</a></p>
+<p>scope???</p>
+<h2 id="Batch-Normalization-批标准化"><a href="#Batch-Normalization-批标准化" class="headerlink" title="Batch Normalization 批标准化"></a>Batch Normalization 批标准化</h2><h2 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h2><p>VGG的CV 16层<br>直接用别人训练好的一部分CNN，参数可以固定<br><a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-16-transfer-learning/" target="_blank" rel="noopener">https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/5-16-transfer-learning/</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+</div>
+                
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <img class="image is-128x128 has-mb-6" src="https://ws1.sinaimg.cn/large/a794a8ccgy1fx6gjojk0jj20fd0fdtrr.jpg" alt="Mr.Sun">
+                    
+                    <p class="is-size-4 is-block">
+                        Mr.Sun
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        在创业、做技术、爱读书、玩户外
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>南京，中国</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        7
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        7
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://weibo.cn/diosmios">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/gini0">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Ins" href="https://www.instagram.com/gini0.2">
+                
+                <i class="fab fa-instagram"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Wechat" href="https://ws1.sinaimg.cn/large/a794a8ccgy1fx6h04sne7j20iq0owjty.jpg">
+                
+                <i class="fab fa-weixin"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=605761927&amp;site=qq&amp;menu=yes">
+                
+                <i class="fab fa-qq"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://www.nankinese.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">会否科技</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">https://www.nankinese.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://www.hikeinchina.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">公益项目</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">http://www.hikeinchina.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://lovegear.taobao.com" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">户外小店</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">https://lovegear.taobao.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/技术/">
+            <span class="level-start">
+                <span class="level-item">技术</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/生活/">
+            <span class="level-start">
+                <span class="level-item">生活</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
+    </div>
+</div>
+
+    
+    
+        <div class="card card-transparent is-hidden-widescreen">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T13:28:56.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="has-link-black-ter is-size-6">关于打开网页跳流氓广告解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/“给我做一个类似XX的App”/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“给我做一个类似XX的App”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T11:10:35.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/“给我做一个类似XX的App”/" class="has-link-black-ter is-size-6">“给我做一个类似XX的App”</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/19/怎么优化LAMP的速度/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="怎么优化LAMP的速度">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:54:37.000Z">2018-11-19</time></div>
+                    <a href="/2018/11/19/怎么优化LAMP的速度/" class="has-link-black-ter is-size-6">怎么优化LAMP的速度</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="WP的buffer pool报错导致数据库Error的解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-14T12:18:47.000Z">2018-11-14</time></div>
+                    <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="has-link-black-ter is-size-6">WP的buffer pool报错导致数据库Error的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/03/25/Tensorflow-学习笔记/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensorflow 学习笔记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-25T07:35:32.000Z">2018-03-25</time></div>
+                    <a href="/2018/03/25/Tensorflow-学习笔记/" class="has-link-black-ter is-size-6">Tensorflow 学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/LAMP/">
+                        <span class="level-start">
+                            <span class="level-item">LAMP</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/ml/">
+                        <span class="level-start">
+                            <span class="level-item">ml</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/python/">
+                        <span class="level-start">
+                            <span class="level-item">python</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/tensorflow/">
+                        <span class="level-start">
+                            <span class="level-item">tensorflow</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/wordpress/">
+                        <span class="level-start">
+                            <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/安全/">
+                        <span class="level-start">
+                            <span class="level-item">安全</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/碎碎念/">
+                        <span class="level-start">
+                            <span class="level-item">碎碎念</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T13:28:56.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="has-link-black-ter is-size-6">关于打开网页跳流氓广告解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/21/“给我做一个类似XX的App”/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="“给我做一个类似XX的App”">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T11:10:35.000Z">2018-11-21</time></div>
+                    <a href="/2018/11/21/“给我做一个类似XX的App”/" class="has-link-black-ter is-size-6">“给我做一个类似XX的App”</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/19/怎么优化LAMP的速度/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="怎么优化LAMP的速度">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:54:37.000Z">2018-11-19</time></div>
+                    <a href="/2018/11/19/怎么优化LAMP的速度/" class="has-link-black-ter is-size-6">怎么优化LAMP的速度</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="WP的buffer pool报错导致数据库Error的解决方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-14T12:18:47.000Z">2018-11-14</time></div>
+                    <a href="/2018/11/14/Wp中数据库Error的解决方法/" class="has-link-black-ter is-size-6">WP的buffer pool报错导致数据库Error的解决方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/03/25/Tensorflow-学习笔记/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensorflow 学习笔记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-25T07:35:32.000Z">2018-03-25</time></div>
+                    <a href="/2018/03/25/Tensorflow-学习笔记/" class="has-link-black-ter is-size-6">Tensorflow 学习笔记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <ul class="menu-list">
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/LAMP/">
+                        <span class="level-start">
+                            <span class="level-item">LAMP</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/ml/">
+                        <span class="level-start">
+                            <span class="level-item">ml</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/python/">
+                        <span class="level-start">
+                            <span class="level-item">python</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/tensorflow/">
+                        <span class="level-start">
+                            <span class="level-item">tensorflow</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/wordpress/">
+                        <span class="level-start">
+                            <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/安全/">
+                        <span class="level-start">
+                            <span class="level-item">安全</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/碎碎念/">
+                        <span class="level-start">
+                            <span class="level-item">碎碎念</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.jpeg" alt="Mr.Sun的东鳞西爪" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2018 Mr.Sun&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" async></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/animejs@2.2.0/anime.js" defer></script>
+    <script src="/js/animation.js" defer></script>
+    
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    MathJax.Hub.Config({
+        "HTML-CSS": {matchFontHeight: false},
+        SVG: {matchFontHeight: false},
+        CommonHTML: {matchFontHeight: false}
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
