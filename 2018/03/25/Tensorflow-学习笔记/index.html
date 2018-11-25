@@ -18,7 +18,7 @@
 <meta property="og:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1668">
 <meta property="og:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1669">
 <meta property="og:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1670">
-<meta property="og:updated_time" content="2018-11-25T14:37:05.512Z">
+<meta property="og:updated_time" content="2018-11-25T14:41:24.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow 学习笔记">
 <meta name="twitter:description" content="[TOC] Tensorflow准备 D1安装 下载地址：https://www.tensorflow.org/install/推荐使用Virtualenv 安装 TensorFlow只用安装某个python的ts每次在新的 shell 中使用 TensorFlow 时，您都必须激活 Virtualenv 环境  斯坦佛：http://web.stanford.edu/class/cs20si/b">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    38 分钟 读完 (大约 5750 个字)
+                    38 分钟 读完 (大约 5751 个字)
                 </span>
                 
             </div>
@@ -175,7 +175,8 @@
 <li>放数据进结构里面</li>
 <li>weight 和 baias（权重和偏置）</li>
 </ol>
-<h4 id="GradientDescentOptimizer-优化器"><a href="#GradientDescentOptimizer-优化器" class="headerlink" title="GradientDescentOptimizer 优化器"></a>GradientDescentOptimizer 优化器</h4><p>eg<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line">//create data</span><br><span class="line">x_dara = np.random.rand(<span class="hljs-number">100</span>).astype(np.float32) <span class="hljs-comment"># ts一般数据都是float32的形式</span></span><br><span class="line">y_data = x_data*<span class="hljs-number">0.1</span> + <span class="hljs-number">0.3</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### create tensorflow structure start ###</span></span><br><span class="line">Weights = tf.Variable(tf.random_uniform([<span class="hljs-number">1</span>], <span class="hljs-number">-1.0</span>, <span class="hljs-number">1.0</span>))<span class="hljs-comment"># V大写可能是多维矩阵，[1]表示一维，在-1到1位的范围</span></span><br><span class="line">biases = tf.Variable(tf.zeros([<span class="hljs-number">1</span>])) <span class="hljs-comment"># 设置初始值是0</span></span><br><span class="line"></span><br><span class="line">y = Weights*x_data + biases</span><br><span class="line"></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-y_data))</span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="hljs-number">0.5</span>)<span class="hljs-comment"># 优化器，有很多optimizer，GradientDescentOptimizer，后面是学习效率。</span></span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### create tensorflow structure end ###</span></span><br><span class="line"></span><br><span class="line">sess = tf.Session() //神经网络激活</span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> range(<span class="hljs-number">201</span>):</span><br><span class="line">    sess.run(train)</span><br><span class="line">    <span class="hljs-keyword">if</span> step % <span class="hljs-number">20</span> == <span class="hljs-number">0</span>:</span><br><span class="line">        print(step, sess.run(Weights), sess.run(biases))</span><br></pre></td></tr></table></figure></p>
+<h4 id="GradientDescentOptimizer-优化器"><a href="#GradientDescentOptimizer-优化器" class="headerlink" title="GradientDescentOptimizer 优化器"></a>GradientDescentOptimizer 优化器</h4><a id="more"></a>
+<p>eg<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np</span><br><span class="line">//create data</span><br><span class="line">x_dara = np.random.rand(<span class="hljs-number">100</span>).astype(np.float32) <span class="hljs-comment"># ts一般数据都是float32的形式</span></span><br><span class="line">y_data = x_data*<span class="hljs-number">0.1</span> + <span class="hljs-number">0.3</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### create tensorflow structure start ###</span></span><br><span class="line">Weights = tf.Variable(tf.random_uniform([<span class="hljs-number">1</span>], <span class="hljs-number">-1.0</span>, <span class="hljs-number">1.0</span>))<span class="hljs-comment"># V大写可能是多维矩阵，[1]表示一维，在-1到1位的范围</span></span><br><span class="line">biases = tf.Variable(tf.zeros([<span class="hljs-number">1</span>])) <span class="hljs-comment"># 设置初始值是0</span></span><br><span class="line"></span><br><span class="line">y = Weights*x_data + biases</span><br><span class="line"></span><br><span class="line">loss = tf.reduce_mean(tf.square(y-y_data))</span><br><span class="line">optimizer = tf.train.GradientDescentOptimizer(<span class="hljs-number">0.5</span>)<span class="hljs-comment"># 优化器，有很多optimizer，GradientDescentOptimizer，后面是学习效率。</span></span><br><span class="line">train = optimizer.minimize(loss)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### create tensorflow structure end ###</span></span><br><span class="line"></span><br><span class="line">sess = tf.Session() //神经网络激活</span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line">sess.run(init)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> range(<span class="hljs-number">201</span>):</span><br><span class="line">    sess.run(train)</span><br><span class="line">    <span class="hljs-keyword">if</span> step % <span class="hljs-number">20</span> == <span class="hljs-number">0</span>:</span><br><span class="line">        print(step, sess.run(Weights), sess.run(biases))</span><br></pre></td></tr></table></figure></p>
 <h3 id="sess-run"><a href="#sess-run" class="headerlink" title="sess.run"></a>sess.run</h3><p>矩阵乘法<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">matrix1 = tf.constant([[<span class="hljs-number">3</span>, <span class="hljs-number">3</span>]])</span><br><span class="line">matrix2 = tf.constant([[<span class="hljs-number">2</span>],</span><br><span class="line">                     [<span class="hljs-number">2</span>]])</span><br><span class="line">product = tf.matmul(matrix1, matrix2)  <span class="hljs-comment"># matrix multiply np.dot(m1, m2) 矩阵乘法</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># method 1</span></span><br><span class="line">sess = tf.Session() <span class="hljs-comment"># Session 大写</span></span><br><span class="line">result = sess.run(product)</span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># method 2</span></span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:   <span class="hljs-comment"># 自动关闭，在with语句中</span></span><br><span class="line">    result2 = sess.run(product)</span><br><span class="line">    print(result2)</span><br></pre></td></tr></table></figure></p>
 <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">state = tf.Variable(<span class="hljs-number">0</span>, name=<span class="hljs-string">'counter'</span>) <span class="hljs-comment">#定义一个变量，数值和名字</span></span><br><span class="line"><span class="hljs-comment">#print(state.name)</span></span><br><span class="line">one = tf.constant(<span class="hljs-number">1</span>) <span class="hljs-comment"># 定义一个常量1</span></span><br><span class="line"></span><br><span class="line">new_value = tf.add(state, one) <span class="hljs-comment"># 加法运算</span></span><br><span class="line">update = tf.assign(state, new_value) </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># tf.initialize_all_variables() no long valid from</span></span><br><span class="line"><span class="hljs-comment"># 2017-03-02 if using tensorflow &gt;= 0.12 ，最重要的一步</span></span><br><span class="line"><span class="hljs-keyword">if</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">1</span>]) &lt; <span class="hljs-number">12</span> <span class="hljs-keyword">and</span> int((tf.__version__).split(<span class="hljs-string">'.'</span>)[<span class="hljs-number">0</span>]) &lt; <span class="hljs-number">1</span>:</span><br><span class="line">    init = tf.initialize_all_variables()</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    init = tf.global_variables_initializer()</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:</span><br><span class="line">    sess.run(init)</span><br><span class="line">    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>): <span class="hljs-comment"># 做三次循环</span></span><br><span class="line">        sess.run(update)</span><br><span class="line">        print(sess.run(state))</span><br></pre></td></tr></table></figure>
 <h3 id="feeds-和-placeholder-传入值"><a href="#feeds-和-placeholder-传入值" class="headerlink" title="feeds 和 placeholder 传入值"></a>feeds 和 placeholder 传入值</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function</span><br><span class="line"><span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">input1 = tf.placeholder(tf.float32)</span><br><span class="line">input2 = tf.placeholder(tf.float32)</span><br><span class="line">output = tf.multiply(input1, input2) <span class="hljs-comment">#乘法</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:</span><br><span class="line">    print(sess.run(output, feed_dict=&#123;input1: [<span class="hljs-number">7.</span>], input2: [<span class="hljs-number">2.</span>]&#125;)) <span class="hljs-comment"># 这两个绑定，字典形式</span></span><br></pre></td></tr></table></figure>
@@ -293,7 +294,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -313,7 +314,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        9
                     </p>
                 </div>
             </div>
@@ -421,7 +422,7 @@
                 <span class="level-item">技术</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/生活/">
@@ -443,7 +444,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
+        <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
     </div>
 </div>
 
@@ -457,6 +458,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-25T14:38:42.000Z">2018-11-25</time></div>
+                    <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -534,25 +554,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/03/25/Tensorflow-学习笔记/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensorflow 学习笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-25T07:35:32.000Z">2018-03-25</time></div>
-                    <a href="/2018/03/25/Tensorflow-学习笔记/" class="has-link-black-ter is-size-6">Tensorflow 学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -571,7 +572,7 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -634,6 +635,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/js/">
+                        <span class="level-start">
+                            <span class="level-item">js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/ml/">
                         <span class="level-start">
                             <span class="level-item">ml</span>
@@ -670,6 +682,17 @@
                     <a class="level is-marginless" href="/tags/wordpress/">
                         <span class="level-start">
                             <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/后端/">
+                        <span class="level-start">
+                            <span class="level-item">后端</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -723,6 +746,25 @@
         
         <article class="media">
             
+            <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-25T14:38:42.000Z">2018-11-25</time></div>
+                    <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
@@ -797,25 +839,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/03/25/Tensorflow-学习笔记/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensorflow 学习笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-25T07:35:32.000Z">2018-03-25</time></div>
-                    <a href="/2018/03/25/Tensorflow-学习笔记/" class="has-link-black-ter is-size-6">Tensorflow 学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -834,7 +857,7 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -897,6 +920,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/js/">
+                        <span class="level-start">
+                            <span class="level-item">js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/ml/">
                         <span class="level-start">
                             <span class="level-item">ml</span>
@@ -933,6 +967,17 @@
                     <a class="level is-marginless" href="/tags/wordpress/">
                         <span class="level-start">
                             <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/后端/">
+                        <span class="level-start">
+                            <span class="level-item">后端</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>

@@ -18,7 +18,7 @@
 <meta property="og:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p2380">
 <meta property="og:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p2414">
 <meta property="og:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p2415">
-<meta property="og:updated_time" content="2018-11-25T14:26:26.399Z">
+<meta property="og:updated_time" content="2018-11-25T14:42:04.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 文档">
 <meta name="twitter:description" content="[TOC] 这个是基于莫凡python，廖雪峰的自学整理 安装安装python31brew install python3 选择python3 —versionatom 安装 scriptcmd shift +p 查找 run  快捷键cmd i打开setting：cmd + ，1pip3 install jupyter 这边用conda更方便 基础功能print 功能Print 功能：  Pri">
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 小时 读完 (大约 8720 个字)
+                    1 小时 读完 (大约 8721 个字)
                 </span>
                 
             </div>
@@ -182,6 +182,7 @@
 <h3 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h3><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apple=<span class="hljs-number">1</span></span><br><span class="line">apple_2016=<span class="hljs-string">'iphone 7 plus'</span></span><br><span class="line">a,b,c=<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-comment">#定义多个自变量</span></span><br></pre></td></tr></table></figure>
 <h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>注意不要少写了<strong>冒号:</strong><br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="hljs-number">3</span></span><br><span class="line"><span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">18</span>:</span><br><span class="line">    print(<span class="hljs-string">'adult'</span>)</span><br><span class="line"><span class="hljs-keyword">elif</span> age &gt;= <span class="hljs-number">6</span>:</span><br><span class="line">    print(<span class="hljs-string">'teenager'</span>)</span><br><span class="line"><span class="hljs-keyword">else</span>:</span><br><span class="line">    print(‘kid<span class="hljs-string">')</span></span><br></pre></td></tr></table></figure></p>
 <p>// <img src="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p2380" alt="d82f37493cc3f66494b326395c054980.png"> //</p>
+<a id="more"></a>
 <h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>循环是while循环，只要条件满足，就不断循环，条件不满足时退出循环。<br>如果要提前结束循环，可以用break语句<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="hljs-number">1</span></span><br><span class="line"><span class="hljs-keyword">while</span> n &lt;= <span class="hljs-number">100</span>:</span><br><span class="line">    <span class="hljs-keyword">if</span> n &gt; <span class="hljs-number">10</span>: <span class="hljs-comment"># 当n = 11时，条件满足，执行break语句</span></span><br><span class="line">        <span class="hljs-keyword">break</span> <span class="hljs-comment"># break语句会结束当前循环</span></span><br><span class="line">    print(n)</span><br><span class="line">    n = n + <span class="hljs-number">1</span></span><br><span class="line">print(<span class="hljs-string">'END'</span>)</span><br></pre></td></tr></table></figure></p>
 <h4 id="continue和break，pass"><a href="#continue和break，pass" class="headerlink" title="continue和break，pass"></a>continue和break，pass</h4><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">while</span> n &lt; <span class="hljs-number">10</span>:</span><br><span class="line">    n = n + <span class="hljs-number">1</span></span><br><span class="line">    <span class="hljs-keyword">if</span> n % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>: <span class="hljs-comment"># 如果n是偶数，执行continue语句</span></span><br><span class="line">        <span class="hljs-keyword">continue</span> <span class="hljs-comment"># continue语句会直接继续下一轮循环，后续的print()语句不会执行</span></span><br><span class="line">    print(n)</span><br></pre></td></tr></table></figure>
 <h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>for…in…循环作为迭代器,cmd+[改变tab缩进结构<br>依次把list或tuple中的每个元素迭代出来，迭代器的作用，<br>看例子：<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [<span class="hljs-string">'Michael'</span>, <span class="hljs-string">'Bob'</span>, <span class="hljs-string">'Tracy'</span>]</span><br><span class="line"><span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:</span><br><span class="line">    print(name)</span><br></pre></td></tr></table></figure></p>
@@ -391,7 +392,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -411,7 +412,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        9
                     </p>
                 </div>
             </div>
@@ -519,7 +520,7 @@
                 <span class="level-item">技术</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/生活/">
@@ -541,7 +542,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
+        <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
     </div>
 </div>
 
@@ -555,6 +556,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-25T14:38:42.000Z">2018-11-25</time></div>
+                    <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -632,25 +652,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/03/25/Tensorflow-学习笔记/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensorflow 学习笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-25T07:35:32.000Z">2018-03-25</time></div>
-                    <a href="/2018/03/25/Tensorflow-学习笔记/" class="has-link-black-ter is-size-6">Tensorflow 学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -669,7 +670,7 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -732,6 +733,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/js/">
+                        <span class="level-start">
+                            <span class="level-item">js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/ml/">
                         <span class="level-start">
                             <span class="level-item">ml</span>
@@ -768,6 +780,17 @@
                     <a class="level is-marginless" href="/tags/wordpress/">
                         <span class="level-start">
                             <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/后端/">
+                        <span class="level-start">
+                            <span class="level-item">后端</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -821,6 +844,25 @@
         
         <article class="media">
             
+            <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Node.js MVC框架 未完 笔记整理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-25T14:38:42.000Z">2018-11-25</time></div>
+                    <a href="/2018/11/25/Node-js-MVC框架-笔记整理/" class="has-link-black-ter is-size-6">Node.js MVC框架 未完 笔记整理</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
@@ -895,25 +937,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/03/25/Tensorflow-学习笔记/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Tensorflow 学习笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-03-25T07:35:32.000Z">2018-03-25</time></div>
-                    <a href="/2018/03/25/Tensorflow-学习笔记/" class="has-link-black-ter is-size-6">Tensorflow 学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/技术/">技术</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -932,7 +955,7 @@
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -995,6 +1018,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/js/">
+                        <span class="level-start">
+                            <span class="level-item">js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/ml/">
                         <span class="level-start">
                             <span class="level-item">ml</span>
@@ -1031,6 +1065,17 @@
                     <a class="level is-marginless" href="/tags/wordpress/">
                         <span class="level-start">
                             <span class="level-item">wordpress</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/后端/">
+                        <span class="level-start">
+                            <span class="level-item">后端</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
