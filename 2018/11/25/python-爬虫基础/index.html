@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="做了一个整理，把python的爬虫基础发一下。 [TOC]">
+    <meta name="description" content="做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料 [TOC]">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python 爬虫基础">
 <meta property="og:url" content="/2018/11/25/python-爬虫基础/index.html">
 <meta property="og:site_name" content="Mr.Sun的东鳞西爪">
-<meta property="og:description" content="做了一个整理，把python的爬虫基础发一下。 [TOC]">
+<meta property="og:description" content="做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料 [TOC]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T14:15:23.819Z">
+<meta property="og:updated_time" content="2018-11-25T14:17:53.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 爬虫基础">
-<meta name="twitter:description" content="做了一个整理，把python的爬虫基础发一下。 [TOC]">
+<meta name="twitter:description" content="做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料 [TOC]">
 
 
 
@@ -143,7 +143,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    18 分钟 读完 (大约 2731 个字)
+                    18 分钟 读完 (大约 2745 个字)
                 </span>
                 
             </div>
@@ -155,7 +155,7 @@
             
         </h1>
         <div class="content">
-            <p>做了一个整理，把python的爬虫基础发一下。</p>
+            <p>做了一个整理，把python的爬虫基础发一下。这个是基于周莫凡的python整理材料</p>
 <p>[TOC]<br><a id="more"></a></p>
 <h1 id="网页爬虫"><a href="#网页爬虫" class="headerlink" title="网页爬虫"></a>网页爬虫</h1><h2 id="了解网页结构"><a href="#了解网页结构" class="headerlink" title="了解网页结构"></a>了解网页结构</h2><p>用python登录网页：<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen</span><br><span class="line"><span class="hljs-comment"># if has Chinese, apply decode()</span></span><br><span class="line">html = urlopen(</span><br><span class="line">    <span class="hljs-string">"https://morvanzhou.github.io/static/scraping/basic-structure.html"</span></span><br><span class="line">).read().decode(<span class="hljs-string">'utf-8'</span>)</span><br><span class="line">print(html)</span><br></pre></td></tr></table></figure></p>
 <p>然后用正则表达式：<br><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = re.findall(<span class="hljs-string">r"&lt;p&gt;(.*?)&lt;/p&gt;"</span>, html, flags=re.DOTALL)    <span class="hljs-comment"># re.DOTALL if multi line</span></span><br><span class="line">print(<span class="hljs-string">"\nPage paragraph is: "</span>, res[<span class="hljs-number">0</span>])</span><br></pre></td></tr></table></figure></p>
