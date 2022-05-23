@@ -1,210 +1,136 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-<title>Node.js MVC框架 未完 笔记整理 - Mr.Sun的东鳞西爪</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
+  
 
-
-
-    <meta name="description" content="[TOC]这个框架有点像drupal/ Node.jsMVC框架Adonis介绍与准备 node 8、npm 3以上版本 全局范围安装： 1npm install @adonisjs/cli --global  创建应用并运行应用 12cd ~/desktopadonis new sunwei-adonis   使用模版blueprint：1adonis new sunwei-adonis ---">
+  
+  <title>Node.js MVC框架 未完 笔记整理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]这个框架有点像drupal/ Node.jsMVC框架Adonis介绍与准备 node 8、npm 3以上版本 全局范围安装： 1npm install @adonisjs/cli --global  创建应用并运行应用 12cd ~/desktopadonis new sunwei-adonis   使用模版blueprint：1adonis new sunwei-adonis ---">
 <meta name="keywords" content="js,后端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js MVC框架 未完 笔记整理">
-<meta property="og:url" content="/2018/07/25/Node-js-MVC框架-笔记整理/index.html">
-<meta property="og:site_name" content="Mr.Sun的东鳞西爪">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/Node-js-MVC框架-笔记整理/index.html">
+<meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="[TOC]这个框架有点像drupal/ Node.jsMVC框架Adonis介绍与准备 node 8、npm 3以上版本 全局范围安装： 1npm install @adonisjs/cli --global  创建应用并运行应用 12cd ~/desktopadonis new sunwei-adonis   使用模版blueprint：1adonis new sunwei-adonis ---">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="default">
 <meta property="og:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1239">
-<meta property="og:updated_time" content="2018-11-25T14:46:38.480Z">
+<meta property="og:updated_time" content="2018-11-25T14:46:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js MVC框架 未完 笔记整理">
 <meta name="twitter:description" content="[TOC]这个框架有点像drupal/ Node.jsMVC框架Adonis介绍与准备 node 8、npm 3以上版本 全局范围安装： 1npm install @adonisjs/cli --global  创建应用并运行应用 12cd ~/desktopadonis new sunwei-adonis   使用模版blueprint：1adonis new sunwei-adonis ---">
 <meta name="twitter:image" content="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1239">
-
-
-
-
-
-<link rel="icon" href="/images/favicon.png">
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
-
-
-    
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
-    
-
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
-
-
-    
-    
-    
-    <style>body>.navbar,body>.section,body>.footer{opacity: 0}</style>
-    
-
-    
-    
-    
-    
-
-<link rel="stylesheet" href="/css/back-to-top.css">
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-<link rel="stylesheet" href="/css/progressbar.css">
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
-
-    
-
-
-<link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="is-3-column">
-    <nav class="navbar navbar-main">
-    <div class="container">
-        <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
-            
-                <img src="/images/logo.jpeg" alt="Node.js MVC框架 未完 笔记整理" height="28">
-            
-            </a>
-        </div>
-        <div class="navbar-menu">
-            
-            <div class="navbar-start">
-                
-                <a class="navbar-item" href="/">Home</a>
-                
-                <a class="navbar-item" href="/archives">Archives</a>
-                
-                <a class="navbar-item" href="/categories">Categories</a>
-                
-                <a class="navbar-item" href="/tags">Tags</a>
-                
-            </div>
-            
-            <div class="navbar-end">
-                
-                    
-                    
-                    <a class="navbar-item" target="_blank" title="Email to me" href="mailto:swceo@njhuifou.com">
-                        
-                        <i class="fa fa-envelope"></i>
-                        
-                    </a>
-                    
-                
-                
-                
-                <a class="navbar-item search" title="搜索" href="javascript:;">
-                    <i class="fas fa-search"></i>
-                </a>
-                
-            </div>
-        </div>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
     </div>
-</nav>
-    
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    
-    <div class="card-content article ">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-07-25T06:38:42.000Z">2018-07-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/技术/">技术</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    30 分钟 读完 (大约 4568 个字)
-                </span>
-                
-            </div>
-        </div>
+      </nav>
+      <nav id="sub-nav">
         
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                Node.js MVC框架 未完 笔记整理
-            
-        </h1>
-        <div class="content">
-            <p>[TOC]<br>这个框架有点像drupal/</p>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Node-js-MVC框架-笔记整理" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/Node-js-MVC框架-笔记整理/" class="article-date">
+  <time datetime="2018-07-25T06:38:42.000Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Node.js MVC框架 未完 笔记整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]<br>这个框架有点像drupal/</p>
 <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><h2 id="MVC框架Adonis"><a href="#MVC框架Adonis" class="headerlink" title="MVC框架Adonis"></a>MVC框架Adonis</h2><h3 id="介绍与准备"><a href="#介绍与准备" class="headerlink" title="介绍与准备"></a>介绍与准备</h3><ol>
 <li>node 8、npm 3以上版本</li>
 <li><p>全局范围安装：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @adonisjs/cli --global</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @adonisjs/cli --global</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建应用并运行应用</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/desktop</span><br><span class="line">adonis new sunwei-adonis</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/desktop</span><br><span class="line">adonis new sunwei-adonis</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>使用模版blueprint：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis new sunwei-adonis ---blueprint ninghao/ninghao-adonis-blueprint</span><br></pre></td></tr></table></figure></p>
+<p>使用模版blueprint：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis new sunwei-adonis ---blueprint ninghao/ninghao-adonis-blueprint</span><br></pre></td></tr></table></figure></p>
 <ol start="4">
 <li><p>启动服务器</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis serve --dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis serve --dev</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>版本控制<br>git init<br>git add .<br>git commit -m ‘init’<br>创建仓库，添加远程地址<br>git push -u origin master</p>
 </li>
 </ol>
-<h3 id="快速起步："><a href="#快速起步：" class="headerlink" title="快速起步："></a>快速起步：</h3><h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>打开目录：<br>start–routes.js 定义路由<br>设置：<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/hello'</span>,(&#123; request &#125;)=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">`hello~ <span class="hljs-subst">$&#123; request.input(<span class="hljs-string">'name'</span>)&#125;</span>`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>访问：<br><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="hljs-comment">//localhost:3333/hello?name=sunwei</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="快速起步："><a href="#快速起步：" class="headerlink" title="快速起步："></a>快速起步：</h3><h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>打开目录：<br>start–routes.js 定义路由<br>设置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/hello'</span>,(&#123; request &#125;)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`hello~ <span class="subst">$&#123; request.input(<span class="string">'name'</span>)&#125;</span>`</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>访问：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//localhost:3333/hello?name=sunwei</span></span><br></pre></td></tr></table></figure></p>
 <p>这个路由的视图文件就是：resources ——views——hello.edge</p>
 <h4 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h4><ol>
 <li><p>创建控制器</p>
 <a id="more"></a>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:controller Hello</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:controller Hello</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>选择http request的这个选项</p>
 </li>
 <li>创建目录后添加方法render：<br>render：交给的方法。通俗的讲就是把context的内容, 加载进templates中定义的文件, 并通过浏览器渲染呈现.<br>render(request, template_name, context=None, content_type=None, status=None, using=None)</li>
 </ol>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloController</span> </span>&#123;</span><br><span class="line">   render(&#123;request&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">`hello~ <span class="hljs-subst">$&#123; request.input(<span class="hljs-string">'name'</span>)&#125;</span>`</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">   render(&#123;request&#125;)&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">`hello~ <span class="subst">$&#123; request.input(<span class="string">'name'</span>)&#125;</span>`</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="4">
-<li>再在路由中设置：<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/hello'</span>,<span class="hljs-string">'HelloController.render'</span>)</span><br></pre></td></tr></table></figure>
+<li>再在路由中设置：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/hello'</span>,<span class="string">'HelloController.render'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h4><p>Provider：重复的需要一个类中的方法时，可封装它为服务类，以便重复使用，如http。</p>
-<p>这里面里面有一个view的provider，就是有一个view的方法，那就把view这个参数解构出来。<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloController</span> </span>&#123;</span><br><span class="line">   render(&#123;request,view&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">const</span> name = request.input(<span class="hljs-string">'name'</span>)</span><br><span class="line">     <span class="hljs-keyword">return</span> view.render(<span class="hljs-string">'hello'</span>,&#123; name &#125;)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>创建一个edge视图：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:view hello</span><br></pre></td></tr></table></figure></p>
+<p>这里面里面有一个view的provider，就是有一个view的方法，那就把view这个参数解构出来。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">   render(&#123;request,view&#125;)&#123;</span><br><span class="line">     <span class="keyword">const</span> name = request.input(<span class="string">'name'</span>)</span><br><span class="line">     <span class="keyword">return</span> view.render(<span class="string">'hello'</span>,&#123; name &#125;)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建一个edge视图：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:view hello</span><br></pre></td></tr></table></figure></p>
 <p>然后views下面会有一个edge的文件<br>添加html文件。atom添加edge插件<br>hello ~</p>
 <h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ol>
 <li><p>默认使用sqlite<br>在config——database.js里面<br>在项目下安装：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis install sqlite3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis install sqlite3</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>这儿用的是python2版本<br>用到migration的功能,创建post这个表</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:migration Post</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:migration Post</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>选择create table<br>在database里面看到 schema.js<br>在up里面添加：</p>
-<figure class="highlight js hljs"><figcaption><span>table.string('title')</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table.text(‘content<span class="hljs-string">','</span>longtext<span class="hljs-string">')</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>table.string('title')</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table.text(‘content<span class="string">','</span>longtext<span class="string">')</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>执行：</p>
@@ -213,30 +139,30 @@
 </ol>
 <h5 id="插入与查询数据"><a href="#插入与查询数据" class="headerlink" title="插入与查询数据"></a>插入与查询数据</h5><ol>
 <li><p>打开routes.js 使用database</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Database = use(<span class="hljs-string">'Database'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,<span class="hljs-keyword">async</span>()=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> Database.table(<span class="hljs-string">'posts'</span>).select(<span class="hljs-string">'*'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Database = use(<span class="string">'Database'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="string">'/posts'</span>,<span class="keyword">async</span>()=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">await</span> Database.table(<span class="string">'posts'</span>).select(<span class="string">'*'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>访问<br>localhost:3333/posts</p>
 </li>
 <li><p>用命令行插入数据，使用repl命令交互模式<br>a)输入 adonis repl</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">await use(‘Database’).table(&apos;posts&apos;).insert(&#123;title:&apos;apple&apos;,content:&apos;a&apos;&#125;)</span><br><span class="line">await use(&apos;Database&apos;).table(&apos;posts&apos;).insert(&#123;title:&apos;lemon&apos;,content:&apos;b&apos;&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">await use(‘Database’).table(&apos;posts&apos;).insert(&#123;title:&apos;apple&apos;,content:&apos;a&apos;&#125;)</span><br><span class="line">await use(&apos;Database&apos;).table(&apos;posts&apos;).insert(&#123;title:&apos;lemon&apos;,content:&apos;b&apos;&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="路由-1"><a href="#路由-1" class="headerlink" title="路由"></a>路由</h2><h3 id="路由-2"><a href="#路由-2" class="headerlink" title="路由"></a>路由</h3><h4 id="路由：简介"><a href="#路由：简介" class="headerlink" title="路由：简介"></a>路由：简介</h4><p>两个参数，一个是地址，箭头函数直接返回的值<br>用postman访问 返回的就List of posts<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,()=&gt;<span class="hljs-string">'List of posts'</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="路由-1"><a href="#路由-1" class="headerlink" title="路由"></a>路由</h2><h3 id="路由-2"><a href="#路由-2" class="headerlink" title="路由"></a>路由</h3><h4 id="路由：简介"><a href="#路由：简介" class="headerlink" title="路由：简介"></a>路由：简介</h4><p>两个参数，一个是地址，箭头函数直接返回的值<br>用postman访问 返回的就List of posts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,()=&gt;<span class="string">'List of posts'</span>)</span><br></pre></td></tr></table></figure></p>
 <h4 id="路由方法：Posts"><a href="#路由方法：Posts" class="headerlink" title="路由方法：Posts"></a>路由方法：Posts</h4><p>想从客户端那里得到数据，可以让客户端用 HTTP 的 Post 方法;<br>把数据发送过来,要让客户端修改数据，可能使用HTTP的put或者patch方法：<br>要请求删除内容，http的delete方法。</p>
-<p>post方法：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,()=&gt;<span class="hljs-string">'post has been created'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>post方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.post(<span class="string">'/posts'</span>,()=&gt;<span class="string">'post has been created'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>\\ 把中间件注释掉 shield ，kernel</p>
 <h4 id="路由参数-Parameters"><a href="#路由参数-Parameters" class="headerlink" title="路由参数:Parameters"></a>路由参数:Parameters</h4><ol>
 <li><p>:id 为必填，　:id?为选填</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts/:id?'</span>,(&#123; params &#125;)=&gt;&#123;</span><br><span class="line">   <span class="hljs-keyword">return</span> <span class="hljs-string">`you are watching <span class="hljs-subst">$&#123;params.id&#125;</span> . `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts/:id?'</span>,(&#123; params &#125;)=&gt;&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">`you are watching <span class="subst">$&#123;params.id&#125;</span> . `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>访问：get方法<br>localhost:3333/posts/33<br>you are watching 33</p>
 </li>
 </ol>
-<h4 id="路由方法：put-patch-与-delete"><a href="#路由方法：put-patch-与-delete" class="headerlink" title="路由方法：put/patch 与 delete"></a>路由方法：put/patch 与 delete</h4><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Route.patch(<span class="hljs-string">'/posts/:id?'</span>,(&#123; params &#125;)=&gt;&#123;</span><br><span class="line">   <span class="hljs-keyword">return</span> <span class="hljs-string">`post <span class="hljs-subst">$&#123;params.id&#125;</span> has been updated. `</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Route.delete(<span class="hljs-string">'/posts/:id?'</span>,(&#123; params &#125;)=&gt;&#123;</span><br><span class="line">   <span class="hljs-keyword">return</span> <span class="hljs-string">`post <span class="hljs-subst">$&#123;params.id&#125;</span> has been removed . `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="绑定控制器"><a href="#绑定控制器" class="headerlink" title="绑定控制器"></a>绑定控制器</h4><p>绑定控制器：为了业务保持简单，一般不放在路由服务器中处理.<br>App-controller-http-post<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:controller Post</span><br></pre></td></tr></table></figure></p>
-<p>在控制器的类里面添加方法，后面又导出了这个控制器，在路由里面，指定某个控制器的某个方法处理路由地址的请求<br>1、在控制器Postcontroller里面<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> </span>&#123;</span><br><span class="line">   index()&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">'list of post'</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="路由方法：put-patch-与-delete"><a href="#路由方法：put-patch-与-delete" class="headerlink" title="路由方法：put/patch 与 delete"></a>路由方法：put/patch 与 delete</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Route.patch(<span class="string">'/posts/:id?'</span>,(&#123; params &#125;)=&gt;&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">`post <span class="subst">$&#123;params.id&#125;</span> has been updated. `</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Route.delete(<span class="string">'/posts/:id?'</span>,(&#123; params &#125;)=&gt;&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">`post <span class="subst">$&#123;params.id&#125;</span> has been removed . `</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="绑定控制器"><a href="#绑定控制器" class="headerlink" title="绑定控制器"></a>绑定控制器</h4><p>绑定控制器：为了业务保持简单，一般不放在路由服务器中处理.<br>App-controller-http-post<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis make:controller Post</span><br></pre></td></tr></table></figure></p>
+<p>在控制器的类里面添加方法，后面又导出了这个控制器，在路由里面，指定某个控制器的某个方法处理路由地址的请求<br>1、在控制器Postcontroller里面<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostController</span> </span>&#123;</span><br><span class="line">   index()&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">'list of post'</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>module.exports = PostController</p>
-<p>2、在路由里面使用这个方法：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,<span class="hljs-string">'PostController.index'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>2、在路由里面使用这个方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,<span class="string">'PostController.index'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>3、postman，get这个localhost:3333/posts</p>
 <h3 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h3><h4 id="理解资源"><a href="#理解资源" class="headerlink" title="理解资源"></a>理解资源</h4><p>应用里面的内容，用户，评论，还有商品等等，这些东西都可以看成是应用里的资源Resrouces针对某个资源，我们可以去创建一组惯用的路由，然后再创建一组控制器方法，用它们去处理对资源的请求 。</p>
 <ul>
@@ -249,44 +175,44 @@
 <li>delete<br>客户端那里也可以发送删除资源的请求，请求用的方法是 DELETE ，请求的地址就是资源的名字，加上要删除的资源的 id 号， 处理这种请求用的控制器的方法的名字是 destroy。</li>
 <li>create 与 edit<br>在创建还有编辑资源的时候，你可能需要给用户提供一个创建还有编辑资源用的表单，显示创建资源用的表单，可以用 http 的 get 方法请求资源名，加上 create 这个路由地址，这个请求用控制器里的 create 方法来处理。<br>返回编辑资源用的表单，路由地址是资源名，加上资源 id ，再加上一个 edit，这个请求可以交给控制器的 edit 方法来处理。</li>
 </ul>
-<h4 id="设置路由和绑定方法"><a href="#设置路由和绑定方法" class="headerlink" title="设置路由和绑定方法"></a>设置路由和绑定方法</h4><p>控制器：app-controllers-http-posts<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> </span>&#123;</span><br><span class="line">   index()&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">'list of post'</span></span><br><span class="line">   &#125;</span><br><span class="line">   store()&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">'post has been created'</span></span><br><span class="line">   &#125;</span><br><span class="line">   show(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">`you are watching <span class="hljs-subst">$&#123;params.id&#125;</span> . `</span></span><br><span class="line">   &#125;</span><br><span class="line">   update(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">`post <span class="hljs-subst">$&#123;params.id&#125;</span> has been updated. `</span></span><br><span class="line">   &#125;</span><br><span class="line">   destroy(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">`post <span class="hljs-subst">$&#123;params.id&#125;</span> has been removed . `</span></span><br><span class="line">   &#125;</span><br><span class="line">   create()&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">`create post . `</span></span><br><span class="line">   &#125;</span><br><span class="line">   edit(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">return</span> <span class="hljs-string">`Editing post <span class="hljs-subst">$&#123;params.id&#125;</span>. `</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p>设置路由：starts-route.js<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,<span class="hljs-string">'PostController.index'</span>)</span><br><span class="line"></span><br><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,<span class="hljs-string">'PostController.store'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="hljs-string">'/posts/create'</span>,<span class="hljs-string">'PostController.create'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="hljs-string">'/posts/:id'</span>,<span class="hljs-string">'PostController.show'</span>)</span><br><span class="line"></span><br><span class="line">Route.patch(<span class="hljs-string">'/posts/:id'</span>,<span class="hljs-string">'PostController.update'</span>)</span><br><span class="line"></span><br><span class="line">Route.delete(<span class="hljs-string">'/posts/:id'</span>,<span class="hljs-string">'PostController.destroy'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(‘/posts/:id/edit<span class="hljs-string">','</span>PostController.edit<span class="hljs-string">')</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="更简单的方法-resource方法"><a href="#更简单的方法-resource方法" class="headerlink" title="更简单的方法 resource方法"></a>更简单的方法 resource方法</h4><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">     .resource(<span class="hljs-string">'posts'</span>,<span class="hljs-string">'PostController'</span>)</span><br><span class="line">     .apiOnly() <span class="hljs-comment">//只需要提供接口，定义资源路由，去掉创建和编辑资源的路由</span></span><br><span class="line">     .only([‘index<span class="hljs-string">','</span>show<span class="hljs-string">',]) //只提供某些方法</span></span><br></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="路由命名：as的方法"><a href="#路由命名：as的方法" class="headerlink" title="路由命名：as的方法"></a>路由命名：as的方法</h4><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">  .get(<span class="hljs-string">'/users'</span>,()=&gt;<span class="hljs-string">'list of users.'</span>)</span><br><span class="line">  .as(<span class="hljs-string">'users.index'</span>) <span class="hljs-comment">//get的方法是地址，as命名路由的名字</span></span><br></pre></td></tr></table></figure>
-<p>改变html,连接的到路由的名字<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a style=<span class="hljs-string">"color:#fff"</span> href=<span class="hljs-string">"&#123;&#123; route('users.index') &#125;&#125;"</span>&gt;List <span class="hljs-keyword">of</span> users&lt;<span class="hljs-regexp">/a&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>后面改get的地址，还是不会变，因为连接到的是路由的名字<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.get(&apos;/list-of-users&apos;,()=&gt;&apos;list of users.&apos;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="路由格式："><a href="#路由格式：" class="headerlink" title="路由格式："></a>路由格式：</h4><p>比如json，html等,判断用户请求的路由格式,然后根据不同的格式，做出不同的响应.<br>Route.js<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/users'</span>,(&#123; request &#125;) =&gt; &#123;</span><br><span class="line">  <span class="hljs-keyword">switch</span> (request.format()) &#123;</span><br><span class="line">    <span class="hljs-keyword">case</span> <span class="hljs-string">'json'</span>:</span><br><span class="line">       <span class="hljs-keyword">return</span> [</span><br><span class="line">         &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'sunwei'</span>&#125;,</span><br><span class="line">         &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'sunwei2'</span>&#125;</span><br><span class="line">       ]</span><br><span class="line">    <span class="hljs-keyword">default</span>:</span><br><span class="line">       <span class="hljs-keyword">return</span> <span class="hljs-string">`</span></span><br><span class="line"><span class="hljs-string">          -sunwei</span></span><br><span class="line"><span class="hljs-string">          -sunwei2</span></span><br><span class="line"><span class="hljs-string">       `</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.formats([<span class="hljs-string">'json'</span>])</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//如果访问localhost:3333/users.json 就是json格式的数据,如果强制请求就是:</span></span><br><span class="line">.formats([<span class="hljs-string">'json'</span>,<span class="hljs-string">'html'</span>],<span class="hljs-literal">true</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="设置路由和绑定方法"><a href="#设置路由和绑定方法" class="headerlink" title="设置路由和绑定方法"></a>设置路由和绑定方法</h4><p>控制器：app-controllers-http-posts<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostController</span> </span>&#123;</span><br><span class="line">   index()&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">'list of post'</span></span><br><span class="line">   &#125;</span><br><span class="line">   store()&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">'post has been created'</span></span><br><span class="line">   &#125;</span><br><span class="line">   show(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">`you are watching <span class="subst">$&#123;params.id&#125;</span> . `</span></span><br><span class="line">   &#125;</span><br><span class="line">   update(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">`post <span class="subst">$&#123;params.id&#125;</span> has been updated. `</span></span><br><span class="line">   &#125;</span><br><span class="line">   destroy(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">`post <span class="subst">$&#123;params.id&#125;</span> has been removed . `</span></span><br><span class="line">   &#125;</span><br><span class="line">   create()&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">`create post . `</span></span><br><span class="line">   &#125;</span><br><span class="line">   edit(&#123;params&#125;)&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">`Editing post <span class="subst">$&#123;params.id&#125;</span>. `</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>设置路由：starts-route.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,<span class="string">'PostController.index'</span>)</span><br><span class="line"></span><br><span class="line">Route.post(<span class="string">'/posts'</span>,<span class="string">'PostController.store'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="string">'/posts/create'</span>,<span class="string">'PostController.create'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="string">'/posts/:id'</span>,<span class="string">'PostController.show'</span>)</span><br><span class="line"></span><br><span class="line">Route.patch(<span class="string">'/posts/:id'</span>,<span class="string">'PostController.update'</span>)</span><br><span class="line"></span><br><span class="line">Route.delete(<span class="string">'/posts/:id'</span>,<span class="string">'PostController.destroy'</span>)</span><br><span class="line"></span><br><span class="line">Route.get(‘/posts/:id/edit<span class="string">','</span>PostController.edit<span class="string">')</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="更简单的方法-resource方法"><a href="#更简单的方法-resource方法" class="headerlink" title="更简单的方法 resource方法"></a>更简单的方法 resource方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">     .resource(<span class="string">'posts'</span>,<span class="string">'PostController'</span>)</span><br><span class="line">     .apiOnly() <span class="comment">//只需要提供接口，定义资源路由，去掉创建和编辑资源的路由</span></span><br><span class="line">     .only([‘index<span class="string">','</span>show<span class="string">',]) //只提供某些方法</span></span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="路由命名：as的方法"><a href="#路由命名：as的方法" class="headerlink" title="路由命名：as的方法"></a>路由命名：as的方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">  .get(<span class="string">'/users'</span>,()=&gt;<span class="string">'list of users.'</span>)</span><br><span class="line">  .as(<span class="string">'users.index'</span>) <span class="comment">//get的方法是地址，as命名路由的名字</span></span><br></pre></td></tr></table></figure>
+<p>改变html,连接的到路由的名字<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a style=<span class="string">"color:#fff"</span> href=<span class="string">"&#123;&#123; route('users.index') &#125;&#125;"</span>&gt;List <span class="keyword">of</span> users&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>后面改get的地址，还是不会变，因为连接到的是路由的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.get(&apos;/list-of-users&apos;,()=&gt;&apos;list of users.&apos;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="路由格式："><a href="#路由格式：" class="headerlink" title="路由格式："></a>路由格式：</h4><p>比如json，html等,判断用户请求的路由格式,然后根据不同的格式，做出不同的响应.<br>Route.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/users'</span>,(&#123; request &#125;) =&gt; &#123;</span><br><span class="line">  <span class="keyword">switch</span> (request.format()) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'json'</span>:</span><br><span class="line">       <span class="keyword">return</span> [</span><br><span class="line">         &#123;<span class="attr">name</span>:<span class="string">'sunwei'</span>&#125;,</span><br><span class="line">         &#123;<span class="attr">name</span>:<span class="string">'sunwei2'</span>&#125;</span><br><span class="line">       ]</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">       <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">          -sunwei</span></span><br><span class="line"><span class="string">          -sunwei2</span></span><br><span class="line"><span class="string">       `</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.formats([<span class="string">'json'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果访问localhost:3333/users.json 就是json格式的数据,如果强制请求就是:</span></span><br><span class="line">.formats([<span class="string">'json'</span>,<span class="string">'html'</span>],<span class="literal">true</span>)</span><br></pre></td></tr></table></figure></p>
 <ol start="2">
 <li>访问：localhost:3333/users</li>
 </ol>
-<h4 id="路由群组："><a href="#路由群组：" class="headerlink" title="路由群组："></a>路由群组：</h4><p>如果有一些路由，需要共享一些特性，比如使用同样的地址前缀，中间件，域名，或者格式。我们可以把这些路由放在一个群组里，然后统一去设置这组路由的特性<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">  .group(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>&#123;</span><br><span class="line">    Route.get(<span class="hljs-string">'users'</span>,()=&gt;<span class="hljs-string">'manage users'</span>)</span><br><span class="line">    Route.get(<span class="hljs-string">'posts'</span>,()=&gt;<span class="hljs-string">'manage posts'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .prefix(<span class="hljs-string">'admin'</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="路由群组："><a href="#路由群组：" class="headerlink" title="路由群组："></a>路由群组：</h4><p>如果有一些路由，需要共享一些特性，比如使用同样的地址前缀，中间件，域名，或者格式。我们可以把这些路由放在一个群组里，然后统一去设置这组路由的特性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">  .group(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    Route.get(<span class="string">'users'</span>,()=&gt;<span class="string">'manage users'</span>)</span><br><span class="line">    Route.get(<span class="string">'posts'</span>,()=&gt;<span class="string">'manage posts'</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">  .prefix(<span class="string">'admin'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>有个前缀admin<br>访问localhost:3333/admin/users</p>
-<h4 id="单页面应用的路由："><a href="#单页面应用的路由：" class="headerlink" title="单页面应用的路由："></a>单页面应用的路由：</h4><p>如果我们打算为应用再配一个前端应用，那我们的后端应用可以只负责接口部分，就是只为前端应用提供数据或者前端发过来的数据.<br>这样应用的路由部分是在前端那里处理的,所以后端这块只定义接口的路由就行了，这样我们可以定义一个 wildcard route：通配类型的路由<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.any(<span class="hljs-string">'*'</span>,(&#123;view&#125;)=&gt;view.render(<span class="hljs-string">'视图名字'</span>)) <span class="hljs-comment">//比如*表示所有的东西。没有定义的路由地址，返回的就是这个welcome(视图名字)的视图</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="单页面应用的路由："><a href="#单页面应用的路由：" class="headerlink" title="单页面应用的路由："></a>单页面应用的路由：</h4><p>如果我们打算为应用再配一个前端应用，那我们的后端应用可以只负责接口部分，就是只为前端应用提供数据或者前端发过来的数据.<br>这样应用的路由部分是在前端那里处理的,所以后端这块只定义接口的路由就行了，这样我们可以定义一个 wildcard route：通配类型的路由<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.any(<span class="string">'*'</span>,(&#123;view&#125;)=&gt;view.render(<span class="string">'视图名字'</span>)) <span class="comment">//比如*表示所有的东西。没有定义的路由地址，返回的就是这个welcome(视图名字)的视图</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="node-js-请求与相应"><a href="#node-js-请求与相应" class="headerlink" title="node.js 请求与相应"></a>node.js 请求与相应</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ol>
 <li><p>得到请求里面的主体内容，先得给应用安装一个 body-parser中间件<br>如果是完整版的话就不需要，不然执行：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis install @adonisjs/bodyparser</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adonis install @adonisjs/bodyparser</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装完后，注册一个provider,在start的app.js：</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'@adonisjs/bodyparser/providers/BodyParserProvider'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'@adonisjs/bodyparser/providers/BodyParserProvider'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在kernel.js里面也要注册全局,在globalMiddleware：</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">'Adonis/Middleware/BodyParser'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'Adonis/Middleware/BodyParser'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>定义一个路由：</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">   .get(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;&#123;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">   .get(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;&#123;</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="查询参数"><a href="#查询参数" class="headerlink" title="查询参数"></a>查询参数</h3><h4 id="查询参数-1"><a href="#查询参数-1" class="headerlink" title="查询参数"></a>查询参数</h4><p>查询参数会作为请求地址的一部分，地址里面的问号后面的东西就是查询参数，还有它们的值，不同的查询参数之间可以使用 &amp; 符号连接到一块儿<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:3333/posts?status=pulish&amp;orderby=create_at</span><br></pre></td></tr></table></figure></p>
-<h4 id="获得查询参数-request-get"><a href="#获得查询参数-request-get" class="headerlink" title="获得查询参数:request.get()"></a>获得查询参数:request.get()</h4><p>设置路由，route.js<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">   .get(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;&#123;</span><br><span class="line">    <span class="hljs-built_in">console</span>.log(request.get());</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>访问：localhost:3333/posts?status=pulish&amp;orderby=create_at<br>返回：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; status: &apos;pulish&apos;, orderby: &apos;create_at&apos; &#125;</span><br></pre></td></tr></table></figure></p>
-<p>直接返回得到的值再响应给客户端：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">   .get(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.get()</span><br><span class="line">   )</span><br></pre></td></tr></table></figure></p>
+<h3 id="查询参数"><a href="#查询参数" class="headerlink" title="查询参数"></a>查询参数</h3><h4 id="查询参数-1"><a href="#查询参数-1" class="headerlink" title="查询参数"></a>查询参数</h4><p>查询参数会作为请求地址的一部分，地址里面的问号后面的东西就是查询参数，还有它们的值，不同的查询参数之间可以使用 &amp; 符号连接到一块儿<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:3333/posts?status=pulish&amp;orderby=create_at</span><br></pre></td></tr></table></figure></p>
+<h4 id="获得查询参数-request-get"><a href="#获得查询参数-request-get" class="headerlink" title="获得查询参数:request.get()"></a>获得查询参数:request.get()</h4><p>设置路由，route.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">   .get(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(request.get());</span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>访问：localhost:3333/posts?status=pulish&amp;orderby=create_at<br>返回：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; status: &apos;pulish&apos;, orderby: &apos;create_at&apos; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>直接返回得到的值再响应给客户端：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route</span><br><span class="line">   .get(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.get()</span><br><span class="line">   )</span><br></pre></td></tr></table></figure></p>
 <p>访问后：localhost:3333/posts?status=pulish&amp;orderby=create_at</p>
 <h3 id="请求数据"><a href="#请求数据" class="headerlink" title="请求数据"></a>请求数据</h3><h4 id="请求中的数据"><a href="#请求中的数据" class="headerlink" title="请求中的数据"></a>请求中的数据</h4><ul>
 <li>从客户端那里可以向应用的服务端发送数据，服务端收到客户端发送过来的数据，可以决定怎么去处理这些数据，比如把它们保存在应用的数据库里。</li>
 <li>一般我们会在应用的服务端定义可以处理客户端发送过来的数据用的路由，然后在应用的前端，或者移动端，可以准备一个表单，让用户在上面填写一些内容，用户提交了表单，会把表单里的数据发送给后端应用。就是带着表单里的数据，去请求支持处理发送数据用的路由的地址。</li>
 <li>请求用的 HTTP 方法一般是 <strong>POST，PUT 或者 PATCH</strong> ，在这些请求里面，可以包含一个请求的<strong>主体</strong>， 这个主体里的东西就是要发送给后端应用的数据 。<br>这个主体内容有不同的格式，比如表单，或者JSON 等等。 在服务端那里应该知道怎么去处理这些使用不同格式发送过来的数据。</li>
 </ul>
-<h4 id="获取请求中的数据"><a href="#获取请求中的数据" class="headerlink" title="获取请求中的数据"></a>获取请求中的数据</h4><p>发送了一个数据请求，又返回来，实际可以保存在数据库之中。<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.post())</span><br><span class="line"><span class="hljs-comment">//</span></span><br><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.all())<span class="hljs-comment">//获得查询参数</span></span><br><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.only([<span class="hljs-string">'title'</span>,<span class="hljs-string">'content'</span>]))<span class="hljs-comment">//单独只获得一组数据</span></span><br><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.except([<span class="hljs-string">'title'</span>,<span class="hljs-string">'content'</span>]))<span class="hljs-comment">//除了某组数据</span></span><br><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.input(<span class="hljs-string">'status'</span>,<span class="hljs-string">'draft'</span>))<span class="hljs-comment">//获得某个具体的数据，比如status，如果没有的话，值就是第二个参数。</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="获取请求中的数据"><a href="#获取请求中的数据" class="headerlink" title="获取请求中的数据"></a>获取请求中的数据</h4><p>发送了一个数据请求，又返回来，实际可以保存在数据库之中。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Route.post(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.post())</span><br><span class="line"><span class="comment">//</span></span><br><span class="line">Route.post(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.all())<span class="comment">//获得查询参数</span></span><br><span class="line">Route.post(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.only([<span class="string">'title'</span>,<span class="string">'content'</span>]))<span class="comment">//单独只获得一组数据</span></span><br><span class="line">Route.post(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.except([<span class="string">'title'</span>,<span class="string">'content'</span>]))<span class="comment">//除了某组数据</span></span><br><span class="line">Route.post(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.input(<span class="string">'status'</span>,<span class="string">'draft'</span>))<span class="comment">//获得某个具体的数据，比如status，如果没有的话，值就是第二个参数。</span></span><br></pre></td></tr></table></figure></p>
 <p>备注：<br>请求的数据是body，json格式的，注意最后一个没有，<br>{<br>​    “title”:”name”,<br>​    “content”:”sunwei”,<br>​    “status”:”pulish”<br>}<br>，</p>
 <ol>
 <li>返回的就是所有的body的json值</li>
@@ -295,1100 +221,97 @@
 <li>除了title和content的值</li>
 <li>只查询status的值，第二个参数是默认的，如果没有其值的话</li>
 </ol>
-<h4 id="请求中的集合数据-request-collect"><a href="#请求中的集合数据-request-collect" class="headerlink" title="请求中的集合数据:request.collect"></a>请求中的集合数据:request.collect</h4><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.post(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.collect([<span class="hljs-string">'title'</span>,<span class="hljs-string">'content'</span>]))</span><br></pre></td></tr></table></figure>
-<p>集合form数据<img src="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1239" alt="128c5e493e540cec5fe9447d06da7dd8.png">不能用requese.only的方法，用request.collect的方法<br>如果用request.only的话，就是返回这样的数据，无法使用<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;title&quot;: [</span><br><span class="line">        &quot;sunwei&quot;,</span><br><span class="line">        &quot;sunwei2&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;content&quot;: [</span><br><span class="line">        &quot;name&quot;,</span><br><span class="line">        &quot;sex&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>collect返回的数据就是：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;title&quot;: &quot;sunwei&quot;,</span><br><span class="line">        &quot;content&quot;: &quot;name&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;title&quot;: &quot;sunwei2&quot;,</span><br><span class="line">        &quot;content&quot;: &quot;sex&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="请求中的集合数据-request-collect"><a href="#请求中的集合数据-request-collect" class="headerlink" title="请求中的集合数据:request.collect"></a>请求中的集合数据:request.collect</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.post(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.collect([<span class="string">'title'</span>,<span class="string">'content'</span>]))</span><br></pre></td></tr></table></figure>
+<p>集合form数据<img src="evernotecid://9A67477A-D574-4790-9D02-79AC4C197FC4/appyinxiangcom/9302176/ENResource/p1239" alt="128c5e493e540cec5fe9447d06da7dd8.png">不能用requese.only的方法，用request.collect的方法<br>如果用request.only的话，就是返回这样的数据，无法使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;title&quot;: [</span><br><span class="line">        &quot;sunwei&quot;,</span><br><span class="line">        &quot;sunwei2&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;content&quot;: [</span><br><span class="line">        &quot;name&quot;,</span><br><span class="line">        &quot;sex&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>collect返回的数据就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;title&quot;: &quot;sunwei&quot;,</span><br><span class="line">        &quot;content&quot;: &quot;name&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;title&quot;: &quot;sunwei2&quot;,</span><br><span class="line">        &quot;content&quot;: &quot;sex&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="头部信息"><a href="#头部信息" class="headerlink" title="头部信息"></a>头部信息</h3><p>头部信息，它是客户端与服务端沟通交流的一种方式 . 客户端请求的时候可以带一些头部信息，服务端响应的时候也可以带一些头部信息 。<br>有的是自动设置的，有的时候我们也会自己额外添加，比如jwt的身份验证。</p>
-<h4 id="获取头部信息：headers（）方法"><a href="#获取头部信息：headers（）方法" class="headerlink" title="获取头部信息：headers（）方法"></a>获取头部信息：headers（）方法</h4><p>get的headers的方法,请求回来的值就是所有的头部信息<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.headers())</span><br></pre></td></tr></table></figure></p>
-<p>具体的一条头部信息：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;request.header(<span class="hljs-string">'user-agent'</span>))</span><br></pre></td></tr></table></figure></p>
-<h4 id="设置响应头部信息：response-header"><a href="#设置响应头部信息：response-header" class="headerlink" title="设置响应头部信息：response.header"></a>设置响应头部信息：response.header</h4><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,(&#123;request&#125;)=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">'&lt;h1&gt;List of posts.&lt;/h1&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>这时候响应的是html；可以在控制台network上看到<br> 设置：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,(&#123;request,response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="hljs-comment">// response.header('Content-type','text/plain')，respense.header方法设置响应的头部信息，后面是两个参数的值。</span></span><br><span class="line">  response.type(<span class="hljs-string">'text/plain'</span>)<span class="hljs-comment">//这是简单的方法</span></span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">'&lt;h1&gt;List of posts.&lt;/h1&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="获取头部信息：headers（）方法"><a href="#获取头部信息：headers（）方法" class="headerlink" title="获取头部信息：headers（）方法"></a>获取头部信息：headers（）方法</h4><p>get的headers的方法,请求回来的值就是所有的头部信息<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.headers())</span><br></pre></td></tr></table></figure></p>
+<p>具体的一条头部信息：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;request.header(<span class="string">'user-agent'</span>))</span><br></pre></td></tr></table></figure></p>
+<h4 id="设置响应头部信息：response-header"><a href="#设置响应头部信息：response-header" class="headerlink" title="设置响应头部信息：response.header"></a>设置响应头部信息：response.header</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,(&#123;request&#125;)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'&lt;h1&gt;List of posts.&lt;/h1&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这时候响应的是html；可以在控制台network上看到<br> 设置：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,(&#123;request,response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="comment">// response.header('Content-type','text/plain')，respense.header方法设置响应的头部信息，后面是两个参数的值。</span></span><br><span class="line">  response.type(<span class="string">'text/plain'</span>)<span class="comment">//这是简单的方法</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'&lt;h1&gt;List of posts.&lt;/h1&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>这样就是纯文本信息了。查询用MIME type查询</p>
-<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><p>服务端在客户端那里存储的一小块数据 ，在客户端那里存储数据，除了 cookie，我们还可以使用 Storage API ，比如 localStorage,sessionStorage ，还有 Indexed DB 。<br>设置和获取cookies<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,(&#123;request,response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> request.headers()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><p>服务端在客户端那里存储的一小块数据 ，在客户端那里存储数据，除了 cookie，我们还可以使用 Storage API ，比如 localStorage,sessionStorage ，还有 Indexed DB 。<br>设置和获取cookies<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,(&#123;request,response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> request.headers()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>请求：localhost:3333/posts<br>可以看到头部信息里面cookies的数据，在application里面可以找到cookies的数据，<br>1、读取cookie数据，可以用request.cookies的方法.<br>2、设置cookie可以用response的cookie方法，第一个是cookie的名字，第二个是cookie的值<br>3、具体某个值可以用cookie(‘’)的方法,第二个参数是默认的值<br>4、删除cookie：response.clearCookie(‘sunwei’)</p>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,(&#123;request,response&#125;)=&gt;&#123;</span><br><span class="line">  response.cookie(<span class="hljs-string">'sunwei'</span>,<span class="hljs-string">'nb'</span>)</span><br><span class="line">  response.clearCookie(<span class="hljs-string">'sunwei'</span>)</span><br><span class="line">  <span class="hljs-comment">// return request.cookies()</span></span><br><span class="line">  <span class="hljs-keyword">return</span> request.cookie(<span class="hljs-string">'sunwei'</span>,<span class="hljs-string">'light'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,(&#123;request,response&#125;)=&gt;&#123;</span><br><span class="line">  response.cookie(<span class="string">'sunwei'</span>,<span class="string">'nb'</span>)</span><br><span class="line">  response.clearCookie(<span class="string">'sunwei'</span>)</span><br><span class="line">  <span class="comment">// return request.cookies()</span></span><br><span class="line">  <span class="keyword">return</span> request.cookie(<span class="string">'sunwei'</span>,<span class="string">'light'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h3 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h3><ul>
 <li>客户端对服务端发出各种请求，服务端可以根据请求响应回对应的数据 做出响应的时候除了带着具体的请求需要的数据，还可以设置响应的头部信息，Cookies ，还有状态码这些东西。在客户端那里可以根据这些信息来判断到底应该怎么使用响应回来的数据</li>
-<li>Get的方法,响应数据用response.send（）方法。<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="hljs-comment">// response.send('list of post')</span></span><br><span class="line">  <span class="hljs-comment">// return 'list of posts.'</span></span><br><span class="line">  <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">     title:<span class="hljs-string">'list of posts.'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<li>Get的方法,响应数据用response.send（）方法。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="comment">// response.send('list of post')</span></span><br><span class="line">  <span class="comment">// return 'list of posts.'</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">     title:<span class="string">'list of posts.'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>这边访问后，是text的格式<br>如果返回的是一个{},那就是自动成为json格式的数据</p>
-<h3 id="异步响应：async-await"><a href="#异步响应：async-await" class="headerlink" title="异步响应：async,await"></a>异步响应：async,await</h3><p>对请求做出响应的时候，有可能不会马上得到要响应的数据。我们可以使用 async，await，这就需要执行的操作必须返回的是 Promise<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> delay = <span class="hljs-function">(<span class="hljs-params">data,time</span>) =&gt;</span>&#123;</span><br><span class="line">   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>&#123;</span><br><span class="line">      resolve(data)</span><br><span class="line">    &#125;,time)</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,<span class="hljs-keyword">async</span> (&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">const</span> data =<span class="hljs-keyword">await</span> delay(</span><br><span class="line">    <span class="hljs-string">'list of posts'</span>,</span><br><span class="line">    <span class="hljs-number">3000</span> )<span class="hljs-comment">//一个是数据，一个是响应时间</span></span><br><span class="line">  <span class="hljs-keyword">return</span> data  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">重定向：Route.get(<span class="hljs-string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.redirect(<span class="hljs-string">'/posts'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,()=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">'List of posts'</span></span><br><span class="line">&#125;)</span><br><span class="line">Route.get(<span class="hljs-string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.redirect(<span class="hljs-string">'/posts'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="hljs-string">'/posts'</span>,()=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">'List of posts'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h4><p>访问一个地址，再把请求重新定向到另一个地址：<br>get方法，response.redirect()方法<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">重定向：Route.get(<span class="hljs-string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.redirect(<span class="hljs-string">'/posts'</span>,<span class="hljs-literal">true</span>,<span class="hljs-number">301</span>)<span class="hljs-comment">//重定向带头部信息查询参数，第二个地址为true，状态码为第三个参数 301</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>使用路由名称和response.route方法重定向以及带参：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="hljs-string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.route(<span class="hljs-string">'list-of-posts'</span>,&#123;<span class="hljs-attr">catagory</span>:food&#125; )</span><br><span class="line">&#125;)<span class="hljs-comment">//第二个参数是catagory</span></span><br><span class="line"></span><br><span class="line">Route</span><br><span class="line">  .get(<span class="hljs-string">'/posts/:catagory?'</span>,(&#123;params&#125;)=&gt;&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-string">`List of <span class="hljs-subst">$&#123;params.catagory || <span class="hljs-string">'default'</span>&#125;</span> posts`</span></span><br><span class="line">&#125;)</span><br><span class="line">  .as(<span class="hljs-string">'list-of-posts'</span>)</span><br></pre></td></tr></table></figure></p>
-<h2 id="视图-1"><a href="#视图-1" class="headerlink" title="视图"></a>视图</h2><h3 id="准备与介绍"><a href="#准备与介绍" class="headerlink" title="准备与介绍"></a>准备与介绍</h3><p>模版引擎：Edge.js<br>app.js 的viewprodiver<br>设置一个资源的路由：(文章，评论，用户<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.resource(<span class="hljs-string">'/posts'</span>,<span class="hljs-string">'PostController'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>cmd创建一个一个视图文件：<br>adonis make:view posts.index<br>然后在index.edge里面搞一个h1<br>访问： localhost:3333/posts<br>传递与使用值<br>在视图里，绑定输出传递过来的数据， 用的是两组大括号，里面添加一个 pageTitle<br>控制器里：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> </span>&#123;</span><br><span class="line">   index(&#123;view&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">const</span> pageTitle = <span class="hljs-string">'list of posts '</span></span><br><span class="line">     <span class="hljs-keyword">return</span> view.render(<span class="hljs-string">'posts.index'</span>,&#123;pageTitle&#125;)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>view视图里面<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; pageTitle || <span class="hljs-string">'Untitled'</span> &#125;&#125; &lt;<span class="hljs-regexp">/h1&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="异步响应：async-await"><a href="#异步响应：async-await" class="headerlink" title="异步响应：async,await"></a>异步响应：async,await</h3><p>对请求做出响应的时候，有可能不会马上得到要响应的数据。我们可以使用 async，await，这就需要执行的操作必须返回的是 Promise<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> delay = <span class="function">(<span class="params">data,time</span>) =&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">      resolve(data)</span><br><span class="line">    &#125;,time)</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Route.get(<span class="string">'/posts'</span>,<span class="keyword">async</span> (&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  <span class="keyword">const</span> data =<span class="keyword">await</span> delay(</span><br><span class="line">    <span class="string">'list of posts'</span>,</span><br><span class="line">    <span class="number">3000</span> )<span class="comment">//一个是数据，一个是响应时间</span></span><br><span class="line">  <span class="keyword">return</span> data  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">重定向：Route.get(<span class="string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.redirect(<span class="string">'/posts'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="string">'/posts'</span>,()=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'List of posts'</span></span><br><span class="line">&#125;)</span><br><span class="line">Route.get(<span class="string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.redirect(<span class="string">'/posts'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Route.get(<span class="string">'/posts'</span>,()=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'List of posts'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h4><p>访问一个地址，再把请求重新定向到另一个地址：<br>get方法，response.redirect()方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">重定向：Route.get(<span class="string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.redirect(<span class="string">'/posts'</span>,<span class="literal">true</span>,<span class="number">301</span>)<span class="comment">//重定向带头部信息查询参数，第二个地址为true，状态码为第三个参数 301</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>使用路由名称和response.route方法重定向以及带参：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Route.get(<span class="string">'/list-of-posts'</span>,(&#123;response&#125;)=&gt;&#123;</span><br><span class="line">  response.route(<span class="string">'list-of-posts'</span>,&#123;<span class="attr">catagory</span>:food&#125; )</span><br><span class="line">&#125;)<span class="comment">//第二个参数是catagory</span></span><br><span class="line"></span><br><span class="line">Route</span><br><span class="line">  .get(<span class="string">'/posts/:catagory?'</span>,(&#123;params&#125;)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`List of <span class="subst">$&#123;params.catagory || <span class="string">'default'</span>&#125;</span> posts`</span></span><br><span class="line">&#125;)</span><br><span class="line">  .as(<span class="string">'list-of-posts'</span>)</span><br></pre></td></tr></table></figure></p>
+<h2 id="视图-1"><a href="#视图-1" class="headerlink" title="视图"></a>视图</h2><h3 id="准备与介绍"><a href="#准备与介绍" class="headerlink" title="准备与介绍"></a>准备与介绍</h3><p>模版引擎：Edge.js<br>app.js 的viewprodiver<br>设置一个资源的路由：(文章，评论，用户<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Route.resource(<span class="string">'/posts'</span>,<span class="string">'PostController'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>cmd创建一个一个视图文件：<br>adonis make:view posts.index<br>然后在index.edge里面搞一个h1<br>访问： localhost:3333/posts<br>传递与使用值<br>在视图里，绑定输出传递过来的数据， 用的是两组大括号，里面添加一个 pageTitle<br>控制器里：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostController</span> </span>&#123;</span><br><span class="line">   index(&#123;view&#125;)&#123;</span><br><span class="line">     <span class="keyword">const</span> pageTitle = <span class="string">'list of posts '</span></span><br><span class="line">     <span class="keyword">return</span> view.render(<span class="string">'posts.index'</span>,&#123;pageTitle&#125;)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>view视图里面<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; pageTitle || <span class="string">'Untitled'</span> &#125;&#125; &lt;<span class="regexp">/h1&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>如果前面加@。则不会渲染两组大括号<br>如果要渲染控制器的html标签 则是3组大括号</p>
-<h4 id="条件-if"><a href="#条件-if" class="headerlink" title="条件 @if"></a>条件 @if</h4><p>判断条件，可以使用一个 @if ，在 Edge 模板引擎里面，这些用 @ 符号开头的东西一般叫 Tags ， if 是个标签的名字 ，endif结尾，其他用elseif来，或者else<br>index.edge:<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="hljs-keyword">if</span>(user.name)</span><br><span class="line">&#123;&#123;user.name&#125;&#125;</span><br><span class="line">@<span class="hljs-keyword">else</span></span><br><span class="line">login/signup</span><br><span class="line">@endif</span><br></pre></td></tr></table></figure></p>
-<p>控制器：<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostController</span> </span>&#123;</span><br><span class="line">   index(&#123;view&#125;)&#123;</span><br><span class="line">     <span class="hljs-keyword">const</span> pageTitle = <span class="hljs-string">'list of posts '</span></span><br><span class="line">     <span class="hljs-keyword">const</span> user =&#123;</span><br><span class="line">       name:<span class="hljs-string">'sunwei'</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="hljs-keyword">return</span> view.render(<span class="hljs-string">'posts.index'</span>,&#123;pageTitle,user&#125;)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="迭代：Iteration"><a href="#迭代：Iteration" class="headerlink" title="迭代：Iteration"></a>迭代：Iteration</h3><p>用@each方法<br>index.edge<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@each(entity <span class="hljs-keyword">in</span> entities)</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;small&gt;</span><br><span class="line">      &#123;&#123;$loop.index+<span class="hljs-number">1</span>&#125;&#125;.</span><br><span class="line">    &lt;<span class="hljs-regexp">/small&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &#123;&#123;entity.title&#125;&#125;:&#123;&#123;entity.content&#125;&#125;</span></span><br><span class="line"><span class="hljs-regexp">  &lt;/</span>div&gt;</span><br><span class="line">@endeach</span><br></pre></td></tr></table></figure></p>
-<h3 id="布局："><a href="#布局：" class="headerlink" title="布局："></a>布局：</h3><p>就是在视图里面可以重复使用的页面的模板<br>放在views——layouts——main.js<br>在index.edge中<br><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@layout(‘layouts.main<span class="hljs-string">')</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="条件-if"><a href="#条件-if" class="headerlink" title="条件 @if"></a>条件 @if</h4><p>判断条件，可以使用一个 @if ，在 Edge 模板引擎里面，这些用 @ 符号开头的东西一般叫 Tags ， if 是个标签的名字 ，endif结尾，其他用elseif来，或者else<br>index.edge:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">if</span>(user.name)</span><br><span class="line">&#123;&#123;user.name&#125;&#125;</span><br><span class="line">@<span class="keyword">else</span></span><br><span class="line">login/signup</span><br><span class="line">@endif</span><br></pre></td></tr></table></figure></p>
+<p>控制器：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostController</span> </span>&#123;</span><br><span class="line">   index(&#123;view&#125;)&#123;</span><br><span class="line">     <span class="keyword">const</span> pageTitle = <span class="string">'list of posts '</span></span><br><span class="line">     <span class="keyword">const</span> user =&#123;</span><br><span class="line">       name:<span class="string">'sunwei'</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> view.render(<span class="string">'posts.index'</span>,&#123;pageTitle,user&#125;)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="迭代：Iteration"><a href="#迭代：Iteration" class="headerlink" title="迭代：Iteration"></a>迭代：Iteration</h3><p>用@each方法<br>index.edge<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@each(entity <span class="keyword">in</span> entities)</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;small&gt;</span><br><span class="line">      &#123;&#123;$loop.index+<span class="number">1</span>&#125;&#125;.</span><br><span class="line">    &lt;<span class="regexp">/small&gt;</span></span><br><span class="line"><span class="regexp">    &#123;&#123;entity.title&#125;&#125;:&#123;&#123;entity.content&#125;&#125;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">@endeach</span><br></pre></td></tr></table></figure></p>
+<h3 id="布局："><a href="#布局：" class="headerlink" title="布局："></a>布局：</h3><p>就是在视图里面可以重复使用的页面的模板<br>放在views——layouts——main.js<br>在index.edge中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@layout(‘layouts.main<span class="string">')</span></span><br></pre></td></tr></table></figure></p>
 <p>设置section<br>如果没有设置内容，就显示section</p>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/js/">js</a>, <a class="has-link-grey -link" href="/tags/后端/">后端</a>
-                </div>
-            </div>
-        </div>
-        
-        
-        
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/25/Node-js-MVC框架-笔记整理/" data-id="cl3iva31j00004oa31djgp0wv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后端/">后端</a></li></ul>
 
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/14/Wp中数据库Error的解决方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          WP的buffer pool报错导致数据库Error的解决方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/25/Tensorflow-学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Tensorflow 学习笔记</div>
+    </a>
+  
+</nav>
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
+  
+</article>
+
+</section>
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/11/14/Wp中数据库Error的解决方法/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">WP的buffer pool报错导致数据库Error的解决方法</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/03/25/Tensorflow-学习笔记/">
-                <span class="level-item">Tensorflow 学习笔记</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-</div>
-
-
-</div>
-                
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <nav class="level">
-            <div class="level-item has-text-centered">
-                <div>
-                    <img class="image is-128x128 has-mb-6" src="https://i.loli.net/2020/03/07/XMuPFKZvWhcgrjB.jpg" alt="Mr.Sun">
-                    
-                    <p class="is-size-4 is-block">
-                        Mr.Sun
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-block">
-                        在创业、做技术、爱读书、玩户外
-                    </p>
-                    
-                    
-                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
-                        <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>南京，中国</span>
-                    </p>
-                    
-                </div>
-            </div>
-        </nav>
-        <nav class="level is-mobile">
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        文章
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        13
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        分类
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        2
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
-                        标签
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        11
-                    </p>
-                </div>
-            </div>
-        </nav>
-        <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://weibo.cn/diosmios">
-                关注我</a>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/gini0">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Ins" href="https://www.instagram.com/gini0.2">
-                
-                <i class="fab fa-instagram"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Wechat" href="https://i.loli.net/2020/03/07/GkPipYgvhoNyeZl.jpg">
-                
-                <i class="fab fa-weixin"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=605761927&amp;site=qq&amp;menu=yes">
-                
-                <i class="fab fa-qq"></i>
-                
-            </a>
-            
-        </div>
-        
-    </div>
-</div>
-    
-        
-    
-        
-
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            链接
-        </h3>
-        <ul class="menu-list">
-        
-            <li>
-                <a class="level is-mobile" href="https://www.nankinese.com" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">会否科技</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">https://www.nankinese.com</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="http://www.hikeinchina.com" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">公益项目</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">http://www.hikeinchina.com</span>
-                    </span>
-                </a>
-            </li>
-        
-            <li>
-                <a class="level is-mobile" href="https://lovegear.taobao.com" target="_blank">
-                    <span class="level-left">
-                        <span class="level-item">户外小店</span>
-                    </span>
-                    <span class="level-right">
-                        <span class="level-item tag">https://lovegear.taobao.com</span>
-                    </span>
-                </a>
-            </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-
-
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/技术/">
-            <span class="level-start">
-                <span class="level-item">技术</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">6</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/生活/">
-            <span class="level-start">
-                <span class="level-item">生活</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">7</span>
-            </span>
-        </a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            标签云
-        </h3>
-        <a href="/tags/LAMP/" style="font-size: 10px;">LAMP</a> <a href="/tags/honey/" style="font-size: 10px;">honey</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/wordpress/" style="font-size: 10px;">wordpress</a> <a href="/tags/产品/" style="font-size: 15px;">产品</a> <a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/安全/" style="font-size: 10px;">安全</a> <a href="/tags/碎碎念/" style="font-size: 20px;">碎碎念</a>
-    </div>
-</div>
-
-    
-    
-        <div class="card card-transparent is-hidden-widescreen">
-        
-            
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2020/03/07/yhun/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="For Honey Yhun">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-07T12:20:48.000Z">2020-03-07</time></div>
-                    <a href="/2020/03/07/yhun/" class="has-link-black-ter is-size-6">For Honey Yhun</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/01/今天看了43场日落/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2020年2月1号">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-01T04:10:48.000Z">2020-02-01</time></div>
-                    <a href="/2020/02/01/今天看了43场日落/" class="has-link-black-ter is-size-6">2020年2月1号</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/12/11/华为最大的牛逼/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="华为最大的牛逼">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-11T05:25:31.000Z">2018-12-11</time></div>
-                    <a href="/2018/12/11/华为最大的牛逼/" class="has-link-black-ter is-size-6">华为最大的牛逼</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/29/公共产品的商业桎梏/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="公共产品的商业桎梏">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-29T12:50:49.000Z">2018-11-29</time></div>
-                    <a href="/2018/11/29/公共产品的商业桎梏/" class="has-link-black-ter is-size-6">公共产品的商业桎梏</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T13:28:56.000Z">2018-11-21</time></div>
-                    <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="has-link-black-ter is-size-6">关于打开网页跳流氓广告解决方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/02/">
-                <span class="level-start">
-                    <span class="level-item">二月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/12/">
-                <span class="level-start">
-                    <span class="level-item">十二月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">5</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/07/">
-                <span class="level-start">
-                    <span class="level-item">七月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/10/">
-                <span class="level-start">
-                    <span class="level-item">十月 2017</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/09/">
-                <span class="level-start">
-                    <span class="level-item">九月 2017</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-        
-            <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/LAMP/">
-                        <span class="level-start">
-                            <span class="level-item">LAMP</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/honey/">
-                        <span class="level-start">
-                            <span class="level-item">honey</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/js/">
-                        <span class="level-start">
-                            <span class="level-item">js</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/ml/">
-                        <span class="level-start">
-                            <span class="level-item">ml</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">3</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/tensorflow/">
-                        <span class="level-start">
-                            <span class="level-item">tensorflow</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/wordpress/">
-                        <span class="level-start">
-                            <span class="level-item">wordpress</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/产品/">
-                        <span class="level-start">
-                            <span class="level-item">产品</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/后端/">
-                        <span class="level-start">
-                            <span class="level-item">后端</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/安全/">
-                        <span class="level-start">
-                            <span class="level-item">安全</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/碎碎念/">
-                        <span class="level-start">
-                            <span class="level-item">碎碎念</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">3</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-        
-        </div>
-    
-</div>
-
-                
-
-
-
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right">
-    
-        
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="menu-label">
-            最新文章
-        </h3>
-        
-        <article class="media">
-            
-            <a href="/2020/03/07/yhun/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="For Honey Yhun">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-07T12:20:48.000Z">2020-03-07</time></div>
-                    <a href="/2020/03/07/yhun/" class="has-link-black-ter is-size-6">For Honey Yhun</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/01/今天看了43场日落/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2020年2月1号">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-01T04:10:48.000Z">2020-02-01</time></div>
-                    <a href="/2020/02/01/今天看了43场日落/" class="has-link-black-ter is-size-6">2020年2月1号</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/12/11/华为最大的牛逼/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="华为最大的牛逼">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-11T05:25:31.000Z">2018-12-11</time></div>
-                    <a href="/2018/12/11/华为最大的牛逼/" class="has-link-black-ter is-size-6">华为最大的牛逼</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/29/公共产品的商业桎梏/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="公共产品的商业桎梏">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-29T12:50:49.000Z">2018-11-29</time></div>
-                    <a href="/2018/11/29/公共产品的商业桎梏/" class="has-link-black-ter is-size-6">公共产品的商业桎梏</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于打开网页跳流氓广告解决方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-21T13:28:56.000Z">2018-11-21</time></div>
-                    <a href="/2018/11/21/关于打开网页跳流氓广告解决方法/" class="has-link-black-ter is-size-6">关于打开网页跳流氓广告解决方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-    </div>
-</div>
-
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-        <h3 class="menu-label">
-            归档
-        </h3>
-        <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/02/">
-                <span class="level-start">
-                    <span class="level-item">二月 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/12/">
-                <span class="level-start">
-                    <span class="level-item">十二月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/11/">
-                <span class="level-start">
-                    <span class="level-item">十一月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">5</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/07/">
-                <span class="level-start">
-                    <span class="level-item">七月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2018/03/">
-                <span class="level-start">
-                    <span class="level-item">三月 2018</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/10/">
-                <span class="level-start">
-                    <span class="level-item">十月 2017</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">2</span>
-                </span>
-            </a>
-        </li>
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2017/09/">
-                <span class="level-start">
-                    <span class="level-item">九月 2017</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
-        
-        </ul>
-        </div>
-    </div>
-</div>
-    
-        <div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <ul class="menu-list">
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/LAMP/">
-                        <span class="level-start">
-                            <span class="level-item">LAMP</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/honey/">
-                        <span class="level-start">
-                            <span class="level-item">honey</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/js/">
-                        <span class="level-start">
-                            <span class="level-item">js</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/ml/">
-                        <span class="level-start">
-                            <span class="level-item">ml</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/python/">
-                        <span class="level-start">
-                            <span class="level-item">python</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">3</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/tensorflow/">
-                        <span class="level-start">
-                            <span class="level-item">tensorflow</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/wordpress/">
-                        <span class="level-start">
-                            <span class="level-item">wordpress</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/产品/">
-                        <span class="level-start">
-                            <span class="level-item">产品</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/后端/">
-                        <span class="level-start">
-                            <span class="level-item">后端</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/安全/">
-                        <span class="level-start">
-                            <span class="level-item">安全</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/碎碎念/">
-                        <span class="level-start">
-                            <span class="level-item">碎碎念</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">3</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-</div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/images/logo.jpeg" alt="Node.js MVC框架 未完 笔记整理" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2020 Mr.Sun&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-            
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("zh-CN");</script>
-
-
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
-
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" async></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        })
-    });
-</script>
-
-
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/animejs@2.2.0/anime.js" defer></script>
-    <script src="/js/animation.js" defer></script>
-    
-
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    MathJax.Hub.Config({
-        "HTML-CSS": {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
-    });
-});
-</script>
-
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
     </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
+    <nav id="mobile-nav">
+  
+</nav>
     
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
 </body>
 </html>
